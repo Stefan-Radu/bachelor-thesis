@@ -3,7 +3,9 @@
 
 # except
 !meltdown*
+!assets*
 !.gitignore
 !*.sh
 !*.c
+!*.png
 !*.md
