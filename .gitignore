@@ -2,6 +2,7 @@
 *
 
 # except
+!meltdown*
 !.gitignore
 !*.sh
 !*.c

