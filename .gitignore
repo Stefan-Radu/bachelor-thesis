@@ -3,6 +3,7 @@
 
 # except
 !meltdown*
+!spectre*
 !assets*
 !.gitignore
 !*.sh
