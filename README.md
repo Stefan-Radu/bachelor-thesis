@@ -1,15 +1,20 @@
 # Speculative-execution-attacks
 ## Danger of Spectre Attacks
 
+The Spectre attacks exploit hardware issues that cannot be solved through software
+without major performance losses.
+
 ### Starting off
 
 Starting off, my task is to reproduce the Meltdown attack.
+
+The Meltdown attack is a speciffic category of Spectre attacks that allowed an unprivideged user to gain access to restricted memory.
 
 I'll use the seedlabs metltdown lab.
 
 ### Meltdown
 
-##### Task 1: Reading from Cache versus from Memory
+##### 1 Reading from Cache versus from Memory
 
 On average cache times fall under are between 50 and 200 CPU cycles.
 
@@ -18,26 +23,26 @@ lower than that, it is most likely a cache hit.
 
 When the difference is the biggest, usually the cache time is below 100 cycles
 
-##### Task 2: Using Cache as a Side Channel
+##### 2 Using Cache as a Side Channel
 
 Made a script `./test_flush_reload.sh`. For mutiple batches of 20 runs I got
 on average 18 / 20 correct cache hits.
 
-##### Task 3 & 4: Place Secret Data in Kernel Space & try to access it
+##### 3 & 4: Place Secret Data in Kernel Space & try to access it
 
 After placing the secret in kernel space, I tried to access it. The result was
 the **expected** Segmentation fault caused by the unhandled SIGSEV signal sent
 when we accessed the prohibited memory location.
 
-##### Task 5: Handle Error/Exceptions in C
+##### 5: Handle Error/Exceptions in C
 
-Exception handling in C is weird, but can be done with signal handlers and `setjmp` & `siglongjmp`
+Exception handling in C can be done with signal handlers and `setjmp` & `siglongjmp`
 
-##### Task 6: Out-of-Order Execution by CPU
+##### 6: Out-of-Order Execution by CPU
 
 If we run the code enough times we can see that we got a chach hit on `7`. That means the instructions following the illegal memory access were actually exectued.
 
-##### Task 7: The Basic Meltdown Attack
+##### 7: The Basic Meltdown Attack
 
 ###### 7.1
 Some very rare cache hits but cannot extract any info from that info. most of them are just random.
@@ -48,9 +53,13 @@ After loading the kernel buffer in the cache the attack is successful. I'm wonde
 
 ![proof](./assets/meltdown_success.png)
 
+###### Mitigation
+
+Meltdown was mitigated with kernel updates which further isolate the kernel memory from user processes.
+
 ### Spectre
 
-I will continue with the spectre lab
+Reproducing the Spectre-v1 attack Bounds Check Bypass (BCB)
 
 ##### Seps 1->2
 
@@ -110,8 +119,12 @@ This happens because the mitigations for *Spectre V1* are at the compiler level
 2. using a binary compiled with an unpached compiler 
 3. turning off the patch in the updated compiler
 
-
 ![proof](./assets/spectre_on_stef_xps.png)
+
+### Conclusion
+
+Even though Meltdown was mittigated Spectre remains an issue on older hardware.
+The **only** complete mitigation for this class of attacks is updating the underlying hardware.
 
 ### Resource
 
