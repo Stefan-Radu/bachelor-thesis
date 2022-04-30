@@ -1,12 +1,5 @@
-# ignore everything
-*
-
-# except
-!meltdown*
-!spectre*
-!assets*
-!.gitignore
-!*.sh
-!*.c
-!*.png
-!*.md
+SEEDUbuntu-16.04-32bit 
+SpectrePoC
+spectre-meltdown-checker
+papers
+.git

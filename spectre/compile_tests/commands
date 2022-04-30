@@ -1,0 +1,1 @@
+docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp gcc:5.3 gcc -march=native attack_in.c -o attack_inn && ./attack_inn
