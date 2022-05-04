@@ -137,6 +137,9 @@ int main(int argc, const char **argv) {
 	int i, score[2], offset;
 	uint8_t value[2];
 
+	/* for (i = 0; i < sizeof(array2); i++) */
+	/* 	array2[i] = 1;    #<{(| write to array2 so in RAM not copy-on-write zero pages |)}># */
+
 	/* if (argc == 2) { */
 	/* 	sscanf(argv[1], "%d", &offset); */
 	/* 	printf("given offset: %d\n", offset); */
