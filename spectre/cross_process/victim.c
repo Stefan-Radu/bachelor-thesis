@@ -94,7 +94,7 @@ void readMemoryByte() {
 }
 
 int main(int argc, const char **argv) {
-	// map shared_file
+	// map shared memory area
 	int fd = open(shared_memory_name, O_CREAT | O_RDWR, S_IRWXU | S_IRWXG | S_IRWXO);
 	array2 = (uint8_t*)mmap(NULL, 256 * 512, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
 	close(fd);
