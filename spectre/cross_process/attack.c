@@ -16,8 +16,7 @@
 /********************************************************************
 Analysis code
 ********************************************************************/
-/* #define CACHE_HIT_THRESHOLD (80)  #<{(| assume cache hit if time <= threshold |)}># */
-#define CACHE_HIT_THRESHOLD (80)  /* assume cache hit if time <= threshold */
+#define CACHE_HIT_THRESHOLD (108)  /* assume cache hit if time <= threshold */
 
 uint8_t *array2;
 unsigned int array1_size = 16;

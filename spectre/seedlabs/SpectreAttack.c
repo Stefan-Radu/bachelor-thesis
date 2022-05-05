@@ -34,7 +34,7 @@ void flushSideChannel()
 
 void reloadSideChannel()
 {
-  int junk=0;
+  unsigned int junk=0;
   register uint64_t time1, time2;
   volatile uint8_t *addr;
   int i;
