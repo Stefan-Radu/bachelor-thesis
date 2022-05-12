@@ -1,0 +1,236 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{what_is_speculative_execution}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a6e1a18325850b76122ef91e1fe5fafc}{%
+           family={Hruska},
+           familyi={H\bibinitperiod},
+           given={Joel},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{a6e1a18325850b76122ef91e1fe5fafc}
+      \strng{fullhash}{a6e1a18325850b76122ef91e1fe5fafc}
+      \strng{bibnamehash}{a6e1a18325850b76122ef91e1fe5fafc}
+      \strng{authorbibnamehash}{a6e1a18325850b76122ef91e1fe5fafc}
+      \strng{authornamehash}{a6e1a18325850b76122ef91e1fe5fafc}
+      \strng{authorfullhash}{a6e1a18325850b76122ef91e1fe5fafc}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 12.05.2022}
+      \field{title}{What Is Speculative Execution?}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.extremetech.com/computing/261792-what-is-speculative-execution
+      \endverb
+      \verb{url}
+      \verb https://www.extremetech.com/computing/261792-what-is-speculative-execution
+      \endverb
+    \endentry
+    \entry{spectre2019}{inproceedings}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=f0a163cdbf4dbde1c36f8457b3e2278e}{%
+           family={Kocher},
+           familyi={K\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=eafaecc2266dc244316f657295446434}{%
+           family={Horn},
+           familyi={H\bibinitperiod},
+           given={Jann},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2c3fca76329df4410f37919bcd49f3e5}{%
+           family={Fogh},
+           familyi={F\bibinitperiod},
+           given={Anders},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9b8ddec78ab1bf52f758858ca3928a61}{%
+           family={Genkin},
+           familyi={G\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=674bea57e03671a89cb3f84cad730696}{%
+           family={Gruss},
+           familyi={G\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=90745f0bee3dd32447e37472dbab6c41}{%
+           family={Haas},
+           familyi={H\bibinitperiod},
+           given={Werner},
+           giveni={W\bibinitperiod}}}%
+        {{hash=d9528fb2869236a3c4d978220eded42c}{%
+           family={Hamburg},
+           familyi={H\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=06dadd3dad2de585a3fce14dd5e8f779}{%
+           family={Lipp},
+           familyi={L\bibinitperiod},
+           given={Moritz},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1cdffbc482347edefd718f61814abbc3}{%
+           family={Mangard},
+           familyi={M\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=b38d2f646061589c79aab7b15fec7827}{%
+           family={Prescher},
+           familyi={P\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{3c1b558b10a44e8a4ecc1e0e195af826}
+      \strng{fullhash}{87bb25ab0fc4dae76a0cc4adb683b57c}
+      \strng{bibnamehash}{87bb25ab0fc4dae76a0cc4adb683b57c}
+      \strng{authorbibnamehash}{87bb25ab0fc4dae76a0cc4adb683b57c}
+      \strng{authornamehash}{3c1b558b10a44e8a4ecc1e0e195af826}
+      \strng{authorfullhash}{87bb25ab0fc4dae76a0cc4adb683b57c}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2019 IEEE Symposium on Security and Privacy (SP)}
+      \field{title}{Spectre attacks: Exploiting speculative execution}
+      \field{year}{2019}
+      \field{pages}{1\bibrangedash 19}
+      \range{pages}{19}
+    \endentry
+    \entry{meltdown2018}{article}{}
+      \name{author}{10}{}{%
+        {{hash=06dadd3dad2de585a3fce14dd5e8f779}{%
+           family={Lipp},
+           familyi={L\bibinitperiod},
+           given={Moritz},
+           giveni={M\bibinitperiod}}}%
+        {{hash=463f3d270ca422b7f257c887efd3eed8}{%
+           family={Schwarz},
+           familyi={S\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=674bea57e03671a89cb3f84cad730696}{%
+           family={Gruss},
+           familyi={G\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=b38d2f646061589c79aab7b15fec7827}{%
+           family={Prescher},
+           familyi={P\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=90745f0bee3dd32447e37472dbab6c41}{%
+           family={Haas},
+           familyi={H\bibinitperiod},
+           given={Werner},
+           giveni={W\bibinitperiod}}}%
+        {{hash=1cdffbc482347edefd718f61814abbc3}{%
+           family={Mangard},
+           familyi={M\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f0a163cdbf4dbde1c36f8457b3e2278e}{%
+           family={Kocher},
+           familyi={K\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=9b8ddec78ab1bf52f758858ca3928a61}{%
+           family={Genkin},
+           familyi={G\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=cd7579fd1f745b58396f5395d38e1a5c}{%
+           family={Yarom},
+           familyi={Y\bibinitperiod},
+           given={Yuval},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=d9528fb2869236a3c4d978220eded42c}{%
+           family={Hamburg},
+           familyi={H\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{c5e126d74b4feabda41a322ec7554974}
+      \strng{fullhash}{51cf67ef48aa1afbac4cb2799063a03e}
+      \strng{bibnamehash}{51cf67ef48aa1afbac4cb2799063a03e}
+      \strng{authorbibnamehash}{51cf67ef48aa1afbac4cb2799063a03e}
+      \strng{authornamehash}{c5e126d74b4feabda41a322ec7554974}
+      \strng{authorfullhash}{51cf67ef48aa1afbac4cb2799063a03e}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1801.01207}
+      \field{title}{Meltdown}
+      \field{year}{2018}
+    \endentry
+    \entry{rdtscp}{misc}{}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 12.05.2022}
+      \field{title}{RDTSCP — Read Time-Stamp Counter and Processor ID}
+      \verb{urlraw}
+      \verb https://www.felixcloutier.com/x86/rdtscp
+      \endverb
+      \verb{url}
+      \verb https://www.felixcloutier.com/x86/rdtscp
+      \endverb
+    \endentry
+    \entry{tomasulo1967}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4e41d59939d3667384e326a1bb5f9bfa}{%
+           family={Tomasulo},
+           familyi={T\bibinitperiod},
+           given={Robert\bibnamedelima M},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IBM}%
+      }
+      \strng{namehash}{4e41d59939d3667384e326a1bb5f9bfa}
+      \strng{fullhash}{4e41d59939d3667384e326a1bb5f9bfa}
+      \strng{bibnamehash}{4e41d59939d3667384e326a1bb5f9bfa}
+      \strng{authorbibnamehash}{4e41d59939d3667384e326a1bb5f9bfa}
+      \strng{authornamehash}{4e41d59939d3667384e326a1bb5f9bfa}
+      \strng{authorfullhash}{4e41d59939d3667384e326a1bb5f9bfa}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IBM Journal of research and Development}
+      \field{number}{1}
+      \field{title}{An efficient algorithm for exploiting multiple arithmetic units}
+      \field{volume}{11}
+      \field{year}{1967}
+      \field{pages}{25\bibrangedash 33}
+      \range{pages}{9}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

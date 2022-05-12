@@ -1,0 +1,14 @@
+\selectlanguage *{romanian}
+\selectlanguage *{romanian}
+\selectlanguage *{romanian}
+\selectlanguage *{english}
+\selectlanguage *{romanian}
+\contentsline {chapter}{\numberline {1}Introducere}{4}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Preliminarii}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Out-of-order Execution \& Instructiuni Tranzitorii}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Branch Prediction \& Executie Speculativa}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}CPU Cache}{6}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Atacuri asupra memoriei cache}{6}{subsection.2.3.1}%
+\contentsline {chapter}{\numberline {3}Continut}{8}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Concluzii}{9}{chapter.4}%
+\contentsline {chapter}{Bibliografie}{10}{chapter*.2}%

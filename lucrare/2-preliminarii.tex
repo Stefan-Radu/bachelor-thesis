@@ -1,0 +1,91 @@
+\chapter{Preliminarii}
+
+\section{Out-of-order Execution \& Instructiuni Tranzitorii}
+
+In trecut procesoarele executau instructiunile in ordinea in care acestea erau
+preluate de la compilator, cate una pe rand. In multe situatii instructiuni mai
+costisitoare blocau fluxul de executie, iar procesorul devenea partial inactiv.
+Procesoarele moderne se folosesc de o serie de tehnici grupate sub umbrela
+\emph{Out-of-order Execution}, introduse pentru prima data la mijlocul anilor
+1990 \cite{what_is_speculative_execution}, in urma unui algoritm dezvoltat de 
+Tomasulo in 1967 \cite{tomasulo1967} care permitea programarea dinamica
+a ordinii instructiunilor si alocarea acestora pe mai multe unitati de executie
+care ruleaza in paralel. Scopul acestei tehnici este utilizarea exhaustiva a
+resurselor disponibile pe procesor, pentru cresterea performantei. 
+
+Aceasta optimizare duce la situatii in care unele instructiuni executate trebuie 
+respinse, iar starea programului intoarsa la una anterioara (din cauza decansarii 
+unei exceptii in urma accesarii unei zone de memorie interzisa de exemplu). Aceste 
+tipuri de instructiuni numite in continuare \emph{Instructiuni Tranzitorii} stau la 
+baza atacului \emph{Meltdown} \cite{meltdown2018}.
+
+
+\section{Branch Prediction \& Executie Speculativa}
+
+Pe baza \emph{Branch Processing Unit} (\emph{BPU}) din interiorul procesoarelor
+moderne incearca sa prezica, in cazul unei ramificari (\emph{if}), sau final de
+iteratie (\emph{for, while}), ramura corecta pe care va fi urmata. In cazul in
+care fluxul de executie stagneaza la un astfel punct de bifurcare (de exemplu,
+in asteptarea incarcarii din memorie a valorii unei variabile), se poate folosi
+prezicerea data de \emph{BPU} pentru a executa speculativ instructiunile
+urmatoare. Dupa ce executia instructiunii care decide bifurcarea este finalizata
+rezultatele obtinute speculativ sunt fie pastrate fie respinse \cite{spectre2019}.
+
+Branch prediction are in general o acuratete foarte ridicata, chiar de peste $95\%$ \cite{what_is_speculative_execution}, asadar executand speculativ s-au obtinut
+imbunatatiri considerabile de performanta. Cu toate acestea, in cazurile in care
+ramura de executie nu este prezisa corect, se vor executa instructiuni care nu ar
+fi avut loc in cadrul executie secventiale, \emph{in-order execution}. Bineinteles,
+aceste instructiuni vor fi \emph{rolled-back}, iar rezultatul final va fi cel asteptat,
+dar la nivel micro-arhitectural se pot observa si masura niste efecte neprevazute ale
+acestor instructiuni executate \emph{out-of-order}. Analizarea cu grija a acestor efecte
+secundare sta la baza atacurilor de tip \emph{Spectre} \cite{spectre2019}.
+
+
+\section{CPU Cache}
+
+Deoarece incarcarea valorilor din memoria RAM in cpu este foarte costisitoare, in 
+cadrul procesoarelor exista niste zone de memorie foarte rapide, de dimensiuni reduse, 
+ce poarta denumirea de emph{cache-uri}. Acestea retin valorile folosite cel mai des 
+intr-un anumit interval de timp. Prin retinerea si citirea valorilor din cache,
+se mascheaza incarcarea initial relativ lenta si se castiga timp pretios de executie.
+
+
+\subsection{Atacuri asupra memoriei cache}
+
+Deoarece memoria cache este mult mai rapida, prin intermediul unui ceas de mare precizie
+putem distinge intre accesare din memorie si accesarea din \emph{cache} a unei variabile.
+Sa consideram urmatorul exemplu:
+
+\begin{lstlisting}[language=c]
+  uint32_t value = 10;
+  addr = &value;
+
+  time = __rdtscp(&junk);
+  junk = *addr;
+  // prima accesare din memorie
+  memory_time = __rdtscp(&junk) - time;
+
+  addr = &value;
+  time = __rdtscp(&junk);
+  junk = *addr;
+  // a doua accesare din cache
+  cache_time = __rdtscp(&junk) - time;
+\end{lstlisting}
+
+
+Timpul de accesare al valorii corespunzatoare variabilei \textbf{value} poate
+fi calculat utilizand instructiunea \texttt{\_\_rdtscp} specifica procesoarelor
+Intel. Aceasta permite citirea \emph{time-stamp counter-ului} din procesor
+\cite{rdtscp}. Prin doua masuratori ce incadreaza dereferentierea pointer-ului
+catre \texttt{value}, putem masura numarul de ciclii de procesor necesari
+operatiei. Repetand experimentul de $10000$ de ori si calcularea mediei
+timpului de acces pentru fiecare caz, obtin urmatoarele:
+
+\begin{itemize}
+  \setlength\itemsep{0em}
+  \item incarcarea din memorie dureaza aproximativ $250$ de ciclii
+  \item incarcarea din cache dureaza aproximativ $23$ de ciclii
+\end{itemize}
+
+Diferente considerabile precum acestea sunt exploatate in cadrul diferitelor
+tehnici de atac asupra memoriei cache.  % despre side channels & flush & reload
