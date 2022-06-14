@@ -1,11 +1,41 @@
 \begin{abstractpage}
 
 \begin{abstract}{romanian}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae eros sit amet sem ornare varius. Duis eget felis eget risus posuere luctus. Integer odio metus, eleifend at nunc vitae, rutrum fermentum leo. Quisque rutrum vitae risus nec porta. Nunc eu orci euismod, ornare risus at, accumsan augue. Ut tincidunt pharetra convallis. Maecenas ut pretium ex. Morbi tellus dui, viverra quis augue at, tincidunt hendrerit orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis sollicitudin nunc. Sed sollicitudin purus dapibus mi fringilla, nec tincidunt nunc eleifend. Nam ut molestie erat. Integer eros dolor, viverra quis massa at, auctor.
+
+  Computerele moderne folosesc tehnici de optimizare precum \emph{executie
+  out-of-order} si \emph{branch prediction}. \emph{Meltdown} si \emph{Spectre}
+  sunt doua atacuri care exploateaza efectele secundare aparute la nivel
+  microarhitectural in urma optimizarilor mentionate. Prin intermediul acestora
+  un atacator poate citi date private din zone arbitrare din memorie, fara
+  privilegii si fara a exploata niciun bug de natura software. \emph{Intel},
+  \emph{AMD} si \emph{ARM} au fost fortate in urma divulgarii acestor atacuri
+  sa isi schimbe designul procesoarelor in incercarea de a mitiga
+  vulnerabilitatile la nivel hardware. In ciuda solutiilor implementate, la
+  jumatatea anului 2022, \emph{Spectre} afecteaza in continure majoritatea
+  computerelor din lumea intreaga si ramane un pericol pentru utilizatori si un
+  subiect de mare interes pentru cercetatori. In aceasta lucrare vor fi
+  prezentate particularitatile celor doua atacuri, si o implementare
+  demonstrativa a unui atac de tip \emph{Spectre}.
+
 \end{abstract}
 
 \begin{abstract}{english}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae eros sit amet sem ornare varius. Duis eget felis eget risus posuere luctus. Integer odio metus, eleifend at nunc vitae, rutrum fermentum leo. Quisque rutrum vitae risus nec porta. Nunc eu orci euismod, ornare risus at, accumsan augue. Ut tincidunt pharetra convallis. Maecenas ut pretium ex. Morbi tellus dui, viverra quis augue at, tincidunt hendrerit orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis sollicitudin nunc. Sed sollicitudin purus dapibus mi fringilla, nec tincidunt nunc eleifend. Nam ut molestie erat. Integer eros dolor, viverra quis massa at, auctor.
+  
+  Modern computers are equiped with features such as \emph{out-of-order
+  execution} and \emph{branch prediction}, which are used to reduce CPU idel
+  time and improve performance. \emph{Meltdown} and \emph{Spectre} are to cyber
+  attacks that exploit microarhitectural side-effects which apper as a result
+  of such optimization techiniques being used. An attacker can read private
+  data of the vicim at arbitrary locations in memory, without exploiting any
+  software bug. \emph{Intel}, \emph{AMD} and \emph{ARM} were forced to redesign
+  their CPUs in order to migiate the risks posed by \emph{Meltdown} and
+  \emph{Spectre}. Despite deployed mitigations, in the second half of 2022,
+  most computers in the world are vulnerable to variations of \emph{Spectre}
+  attacks, billions of users begin at risk. This class of attacks remains a
+  subject of great interest for researchers in the field of security. In this
+  work, the technicalities and implications of both attacks will be covered.
+  Moreover, a proof of concept for a \emph{Spectre} attack will be presented.
+
 \end{abstract}
 
 \end{abstractpage}

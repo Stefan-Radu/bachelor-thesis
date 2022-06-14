@@ -19,6 +19,442 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{amd_mitigations}{misc}{}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 31.05.2022}
+      \field{title}{AMD64 TECHNOLOGY INDIRECT BRANCH CONTROL EXTENSION}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://developer.amd.com/wp-content/resources/Architecture_Guidelines_Update_Indirect_Branch_Control.pdf
+      \endverb
+      \verb{url}
+      \verb https://developer.amd.com/wp-content/resources/Architecture_Guidelines_Update_Indirect_Branch_Control.pdf
+      \endverb
+    \endentry
+    \entry{bhi_spectre_2022}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=29b08a290f9d415a187d5566a643f6e0}{%
+           family={Barberis},
+           familyi={B\bibinitperiod},
+           given={Enrico},
+           giveni={E\bibinitperiod}}}%
+        {{hash=ae738a5d2928c37a15a73353b863473e}{%
+           family={Frigo},
+           familyi={F\bibinitperiod},
+           given={Pietro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=5373bf9d0c557ad40b6c3f446c935b13}{%
+           family={Muench},
+           familyi={M\bibinitperiod},
+           given={Marius},
+           giveni={M\bibinitperiod}}}%
+        {{hash=02997b67b6ffe1ea8e813dd2f362f33d}{%
+           family={Bos},
+           familyi={B\bibinitperiod},
+           given={Herbert},
+           giveni={H\bibinitperiod}}}%
+        {{hash=fe64cd8f861277f5e2e6b1e85ba01c4e}{%
+           family={Giuffrida},
+           familyi={G\bibinitperiod},
+           given={Cristiano},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{464e1170ffe62a7c6f1a6053b4aa5873}
+      \strng{fullhash}{c55b5e53420454aeb96ceb7b188623cf}
+      \strng{bibnamehash}{c55b5e53420454aeb96ceb7b188623cf}
+      \strng{authorbibnamehash}{c55b5e53420454aeb96ceb7b188623cf}
+      \strng{authornamehash}{464e1170ffe62a7c6f1a6053b4aa5873}
+      \strng{authorfullhash}{c55b5e53420454aeb96ceb7b188623cf}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{USENIX Security}
+      \field{title}{Branch history injection: On the effectiveness of hardware mitigations against cross-privilege Spectre-v2 attacks}
+      \field{volume}{11}
+      \field{year}{2022}
+    \endentry
+    \entry{timing_practical}{article}{}
+      \name{author}{2}{}{%
+        {{hash=cbeda943714c044f03a749cf0a15f952}{%
+           family={Brumley},
+           familyi={B\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9ef331cc9e5b527723547dfa1becd8cf}{%
+           family={Boneh},
+           familyi={B\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{08b89eb7ac5ae2cacce497fbd2ebad79}
+      \strng{fullhash}{08b89eb7ac5ae2cacce497fbd2ebad79}
+      \strng{bibnamehash}{08b89eb7ac5ae2cacce497fbd2ebad79}
+      \strng{authorbibnamehash}{08b89eb7ac5ae2cacce497fbd2ebad79}
+      \strng{authornamehash}{08b89eb7ac5ae2cacce497fbd2ebad79}
+      \strng{authorfullhash}{08b89eb7ac5ae2cacce497fbd2ebad79}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Networks}
+      \field{number}{5}
+      \field{title}{Remote timing attacks are practical}
+      \field{volume}{48}
+      \field{year}{2005}
+      \field{pages}{701\bibrangedash 716}
+      \range{pages}{16}
+    \endentry
+    \entry{caching}{misc}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 13.05.2022}
+      \field{title}{Caching}
+      \verb{urlraw}
+      \verb https://cseweb.ucsd.edu/classes/sp13/cse141-a/Slides/10_Caches_detail.pdf
+      \endverb
+      \verb{url}
+      \verb https://cseweb.ucsd.edu/classes/sp13/cse141-a/Slides/10_Caches_detail.pdf
+      \endverb
+    \endentry
+    \entry{clflush}{misc}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 13.05.2022}
+      \field{title}{CLFLUSH — Flush Cache Line}
+      \verb{urlraw}
+      \verb https://www.felixcloutier.com/x86/clflush
+      \endverb
+      \verb{url}
+      \verb https://www.felixcloutier.com/x86/clflush
+      \endverb
+    \endentry
+    \entry{smap}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=729670cd9d39b9b575390147a29d51d7}{%
+           family={Corbet},
+           familyi={C\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{729670cd9d39b9b575390147a29d51d7}
+      \strng{fullhash}{729670cd9d39b9b575390147a29d51d7}
+      \strng{bibnamehash}{729670cd9d39b9b575390147a29d51d7}
+      \strng{authorbibnamehash}{729670cd9d39b9b575390147a29d51d7}
+      \strng{authornamehash}{729670cd9d39b9b575390147a29d51d7}
+      \strng{authorfullhash}{729670cd9d39b9b575390147a29d51d7}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 30.05.2022}
+      \field{title}{Supervisor mode access prevention}
+      \field{year}{2012}
+      \verb{urlraw}
+      \verb https://lwn.net/Articles/517475/
+      \endverb
+      \verb{url}
+      \verb https://lwn.net/Articles/517475/
+      \endverb
+    \endentry
+    \entry{denning2006locality}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=c466deb7ebc32fdd92a6c470c15bda5b}{%
+           family={Denning},
+           familyi={D\bibinitperiod},
+           given={Peter\bibnamedelima J},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {World Scientific}%
+      }
+      \strng{namehash}{c466deb7ebc32fdd92a6c470c15bda5b}
+      \strng{fullhash}{c466deb7ebc32fdd92a6c470c15bda5b}
+      \strng{bibnamehash}{c466deb7ebc32fdd92a6c470c15bda5b}
+      \strng{authorbibnamehash}{c466deb7ebc32fdd92a6c470c15bda5b}
+      \strng{authornamehash}{c466deb7ebc32fdd92a6c470c15bda5b}
+      \strng{authorfullhash}{c466deb7ebc32fdd92a6c470c15bda5b}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Communication Networks And Computer Systems: A Tribute to Professor Erol Gelenbe}
+      \field{title}{The locality principle}
+      \field{year}{2006}
+      \field{pages}{43\bibrangedash 67}
+      \range{pages}{25}
+    \endentry
+    \entry{seedlabs_meltdown}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=1216cef170859869ff8077cf81a5b1e5}{%
+           family={Du},
+           familyi={D\bibinitperiod},
+           given={Wenliang},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{1216cef170859869ff8077cf81a5b1e5}
+      \strng{fullhash}{1216cef170859869ff8077cf81a5b1e5}
+      \strng{bibnamehash}{1216cef170859869ff8077cf81a5b1e5}
+      \strng{authorbibnamehash}{1216cef170859869ff8077cf81a5b1e5}
+      \strng{authornamehash}{1216cef170859869ff8077cf81a5b1e5}
+      \strng{authorfullhash}{1216cef170859869ff8077cf81a5b1e5}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 23.05.2022}
+      \field{title}{Meltdown Attack Lab}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://seedsecuritylabs.org/Labs_20.04/Files/Meltdown_Attack/Meltdown_Attack.pdf
+      \endverb
+      \verb{url}
+      \verb https://seedsecuritylabs.org/Labs_20.04/Files/Meltdown_Attack/Meltdown_Attack.pdf
+      \endverb
+    \endentry
+    \entry{grisenthwaite2018cache}{article}{}
+      \name{author}{1}{}{%
+        {{hash=d3842074f9dc38cb621f35863e20fffa}{%
+           family={Grisenthwaite},
+           familyi={G\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{d3842074f9dc38cb621f35863e20fffa}
+      \strng{fullhash}{d3842074f9dc38cb621f35863e20fffa}
+      \strng{bibnamehash}{d3842074f9dc38cb621f35863e20fffa}
+      \strng{authorbibnamehash}{d3842074f9dc38cb621f35863e20fffa}
+      \strng{authornamehash}{d3842074f9dc38cb621f35863e20fffa}
+      \strng{authorfullhash}{d3842074f9dc38cb621f35863e20fffa}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Jan., Arm Limited}
+      \field{title}{Cache speculation side-channels}
+      \field{year}{2018}
+      \field{pages}{1\bibrangedash 13}
+      \range{pages}{13}
+    \endentry
+    \entry{gruss2017kaslr}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=674bea57e03671a89cb3f84cad730696}{%
+           family={Gruss},
+           familyi={G\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=06dadd3dad2de585a3fce14dd5e8f779}{%
+           family={Lipp},
+           familyi={L\bibinitperiod},
+           given={Moritz},
+           giveni={M\bibinitperiod}}}%
+        {{hash=463f3d270ca422b7f257c887efd3eed8}{%
+           family={Schwarz},
+           familyi={S\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2068f35927dd1cde703acf5adc267534}{%
+           family={Fellner},
+           familyi={F\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=32662039a5cc273dc93db7d12c250ef6}{%
+           family={Maurice},
+           familyi={M\bibinitperiod},
+           given={Clémentine},
+           giveni={C\bibinitperiod}}}%
+        {{hash=1cdffbc482347edefd718f61814abbc3}{%
+           family={Mangard},
+           familyi={M\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{854fa78496b043458d9a06a3d7c47b68}
+      \strng{fullhash}{bcc5e0ae0bf4beec7c3f5b8b460651d9}
+      \strng{bibnamehash}{bcc5e0ae0bf4beec7c3f5b8b460651d9}
+      \strng{authorbibnamehash}{bcc5e0ae0bf4beec7c3f5b8b460651d9}
+      \strng{authornamehash}{854fa78496b043458d9a06a3d7c47b68}
+      \strng{authorfullhash}{bcc5e0ae0bf4beec7c3f5b8b460651d9}
+      \field{extraname}{1}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Symposium on Engineering Secure Software and Systems}
+      \field{title}{Kaslr is dead: long live kaslr}
+      \field{year}{2017}
+      \field{pages}{161\bibrangedash 176}
+      \range{pages}{16}
+    \endentry
+    \entry{gruss2016prefetch}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=674bea57e03671a89cb3f84cad730696}{%
+           family={Gruss},
+           familyi={G\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=32662039a5cc273dc93db7d12c250ef6}{%
+           family={Maurice},
+           familyi={M\bibinitperiod},
+           given={Clémentine},
+           giveni={C\bibinitperiod}}}%
+        {{hash=2c3fca76329df4410f37919bcd49f3e5}{%
+           family={Fogh},
+           familyi={F\bibinitperiod},
+           given={Anders},
+           giveni={A\bibinitperiod}}}%
+        {{hash=06dadd3dad2de585a3fce14dd5e8f779}{%
+           family={Lipp},
+           familyi={L\bibinitperiod},
+           given={Moritz},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1cdffbc482347edefd718f61814abbc3}{%
+           family={Mangard},
+           familyi={M\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{854fa78496b043458d9a06a3d7c47b68}
+      \strng{fullhash}{eed29b4a16fa0b337a485c20fa142ead}
+      \strng{bibnamehash}{eed29b4a16fa0b337a485c20fa142ead}
+      \strng{authorbibnamehash}{eed29b4a16fa0b337a485c20fa142ead}
+      \strng{authornamehash}{854fa78496b043458d9a06a3d7c47b68}
+      \strng{authorfullhash}{eed29b4a16fa0b337a485c20fa142ead}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2016 ACM SIGSAC conference on computer and communications security}
+      \field{title}{Prefetch side-channel attacks: Bypassing SMAP and kernel ASLR}
+      \field{year}{2016}
+      \field{pages}{368\bibrangedash 379}
+      \range{pages}{12}
+    \endentry
+    \entry{cold_boot}{article}{}
+      \name{author}{9}{}{%
+        {{hash=6cba604de51e7ad2b27a90bc7f4ce019}{%
+           family={Halderman},
+           familyi={H\bibinitperiod},
+           given={J\bibnamedelima Alex},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=5d3f156944c56840b0318b38b5836169}{%
+           family={Schoen},
+           familyi={S\bibinitperiod},
+           given={Seth\bibnamedelima D},
+           giveni={S\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=3ad83fecd0fa965b650e3af91800c5bd}{%
+           family={Heninger},
+           familyi={H\bibinitperiod},
+           given={Nadia},
+           giveni={N\bibinitperiod}}}%
+        {{hash=622a70caf17905ede3c3b68935e6889e}{%
+           family={Clarkson},
+           familyi={C\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+        {{hash=88c7f6c0c33dc4d9d14f34d0e2cf1282}{%
+           family={Paul},
+           familyi={P\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+        {{hash=15e13c554094a001f2bc5aef0c6fdb98}{%
+           family={Calandrino},
+           familyi={C\bibinitperiod},
+           given={Joseph\bibnamedelima A},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=d5b7fbf06aa04cd980382f3766e04df9}{%
+           family={Feldman},
+           familyi={F\bibinitperiod},
+           given={Ariel\bibnamedelima J},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=8a9cbff7a0b253dce6decc51b883540b}{%
+           family={Appelbaum},
+           familyi={A\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1527a830397c4e7dfb4604830ab3ae90}{%
+           family={Felten},
+           familyi={F\bibinitperiod},
+           given={Edward\bibnamedelima W},
+           giveni={E\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM New York, NY, USA}%
+      }
+      \strng{namehash}{01e77bff812c424a430b8e3130772fd0}
+      \strng{fullhash}{c13e35b6cb520d115637bd8c81c43418}
+      \strng{bibnamehash}{c13e35b6cb520d115637bd8c81c43418}
+      \strng{authorbibnamehash}{c13e35b6cb520d115637bd8c81c43418}
+      \strng{authornamehash}{01e77bff812c424a430b8e3130772fd0}
+      \strng{authorfullhash}{c13e35b6cb520d115637bd8c81c43418}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications of the ACM}
+      \field{number}{5}
+      \field{title}{Lest we remember: cold-boot attacks on encryption keys}
+      \field{volume}{52}
+      \field{year}{2009}
+      \field{pages}{91\bibrangedash 98}
+      \range{pages}{8}
+    \endentry
+    \entry{homescu2012microgadgets}{article}{}
+      \name{author}{5}{}{%
+        {{hash=44f0093604847145562164ed066bbb4a}{%
+           family={Homescu},
+           familyi={H\bibinitperiod},
+           given={Andrei},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4a30172107192bd2e4d7dd35e9678611}{%
+           family={Stewart},
+           familyi={S\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ec289beaed0e4ab1f3ba052eb23f9d07}{%
+           family={Larsen},
+           familyi={L\bibinitperiod},
+           given={Per},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e612dea1bcd177b533e9336f33dbe4da}{%
+           family={Brunthaler},
+           familyi={B\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a88c72c47d99f6e8c7043e2dcc01d87f}{%
+           family={Franz},
+           familyi={F\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{d58c75a9d8dc1c49bbb4a90bbba076c2}
+      \strng{fullhash}{33d66f55cb8cb6f87b8b63d3365683c5}
+      \strng{bibnamehash}{33d66f55cb8cb6f87b8b63d3365683c5}
+      \strng{authorbibnamehash}{33d66f55cb8cb6f87b8b63d3365683c5}
+      \strng{authornamehash}{d58c75a9d8dc1c49bbb4a90bbba076c2}
+      \strng{authorfullhash}{33d66f55cb8cb6f87b8b63d3365683c5}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{WOOT}
+      \field{title}{Microgadgets: Size Does Matter in Turing-Complete Return-Oriented Programming.}
+      \field{volume}{12}
+      \field{year}{2012}
+      \field{pages}{64\bibrangedash 76}
+      \range{pages}{13}
+    \endentry
     \entry{what_is_speculative_execution}{misc}{}
       \name{author}{1}{}{%
         {{hash=a6e1a18325850b76122ef91e1fe5fafc}{%
@@ -45,6 +481,60 @@
       \endverb
       \verb{url}
       \verb https://www.extremetech.com/computing/261792-what-is-speculative-execution
+      \endverb
+    \endentry
+    \entry{kernel_redhat}{misc}{}
+      \field{sortinit}{h}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 29.05.2022}
+      \field{title}{https://www.redhat.com/en/topics/linux/what-is-the-linux-kernel}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://www.redhat.com/en/topics/linux/what-is-the-linux-kernel
+      \endverb
+      \verb{url}
+      \verb https://www.redhat.com/en/topics/linux/what-is-the-linux-kernel
+      \endverb
+    \endentry
+    \entry{intel_mitigations}{misc}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 31.05.2022}
+      \field{title}{INTEL-SA-00088}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/advisory-guidance/branch-target-injection.html
+      \endverb
+      \verb{url}
+      \verb https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/advisory-guidance/branch-target-injection.html
+      \endverb
+    \endentry
+    \entry{i5_8250U}{misc}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 22.05.2022}
+      \field{title}{Intel® Core™ i5-8250U Processor}
+      \verb{urlraw}
+      \verb https://ark.intel.com/content/www/us/en/ark/products/124967/intel-core-i58250u-processor-6m-cache-up-to-3-40-ghz.html
+      \endverb
+      \verb{url}
+      \verb https://ark.intel.com/content/www/us/en/ark/products/124967/intel-core-i58250u-processor-6m-cache-up-to-3-40-ghz.html
+      \endverb
+    \endentry
+    \entry{kernel}{misc}{}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 16.05.2022}
+      \field{title}{Kernel}
+      \verb{urlraw}
+      \verb https://cs61.seas.harvard.edu/site/2021/Kernel/
+      \endverb
+      \verb{url}
+      \verb https://cs61.seas.harvard.edu/site/2021/Kernel/
       \endverb
     \endentry
     \entry{spectre2019}{inproceedings}{}
@@ -188,6 +678,70 @@
       \field{title}{Meltdown}
       \field{year}{2018}
     \endentry
+    \entry{cache_attacks}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=c340309a7c1c73047856f2986dfa5e79}{%
+           family={Panda},
+           familyi={P\bibinitperiod},
+           given={Biswabandan},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{c340309a7c1c73047856f2986dfa5e79}
+      \strng{fullhash}{c340309a7c1c73047856f2986dfa5e79}
+      \strng{bibnamehash}{c340309a7c1c73047856f2986dfa5e79}
+      \strng{authorbibnamehash}{c340309a7c1c73047856f2986dfa5e79}
+      \strng{authornamehash}{c340309a7c1c73047856f2986dfa5e79}
+      \strng{authorfullhash}{c340309a7c1c73047856f2986dfa5e79}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 13.05.2022}
+      \field{title}{Cache Attacks}
+      \verb{urlraw}
+      \verb https://www.cse.iitk.ac.in/users/biswap/CS665/lectures/L6.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.cse.iitk.ac.in/users/biswap/CS665/lectures/L6.pdf
+      \endverb
+    \endentry
+    \entry{percival2005cache}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e1b747602790e7ad5da2cda19a51475f}{%
+           family={Percival},
+           familyi={P\bibinitperiod},
+           given={Colin},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {BSDCan Ottawa}%
+      }
+      \strng{namehash}{e1b747602790e7ad5da2cda19a51475f}
+      \strng{fullhash}{e1b747602790e7ad5da2cda19a51475f}
+      \strng{bibnamehash}{e1b747602790e7ad5da2cda19a51475f}
+      \strng{authorbibnamehash}{e1b747602790e7ad5da2cda19a51475f}
+      \strng{authornamehash}{e1b747602790e7ad5da2cda19a51475f}
+      \strng{authorfullhash}{e1b747602790e7ad5da2cda19a51475f}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Cache missing for fun and profit}
+      \field{year}{2005}
+    \endentry
+    \entry{processes}{misc}{}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 14.05.2022}
+      \field{title}{Processes}
+      \verb{urlraw}
+      \verb https://www.gnu.org/software/libc/manual/html_node/Processes.html
+      \endverb
+      \verb{url}
+      \verb https://www.gnu.org/software/libc/manual/html_node/Processes.html
+      \endverb
+    \endentry
     \entry{rdtscp}{misc}{}
       \field{sortinit}{R}
       \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
@@ -200,6 +754,115 @@
       \verb{url}
       \verb https://www.felixcloutier.com/x86/rdtscp
       \endverb
+    \endentry
+    \entry{v1_mitigations}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=38099ed709abcc00fbb35a63fec5d1b5}{%
+           family={Rehberg},
+           familyi={R\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{38099ed709abcc00fbb35a63fec5d1b5}
+      \strng{fullhash}{38099ed709abcc00fbb35a63fec5d1b5}
+      \strng{bibnamehash}{38099ed709abcc00fbb35a63fec5d1b5}
+      \strng{authorbibnamehash}{38099ed709abcc00fbb35a63fec5d1b5}
+      \strng{authornamehash}{38099ed709abcc00fbb35a63fec5d1b5}
+      \strng{authorfullhash}{38099ed709abcc00fbb35a63fec5d1b5}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 31.05.2022}
+      \field{title}{Spectre v1 Mitigation via Compiler options}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.methodpark.de/blog/spectre-v1-mitigation-via-compiler-options/
+      \endverb
+      \verb{url}
+      \verb https://www.methodpark.de/blog/spectre-v1-mitigation-via-compiler-options/
+      \endverb
+    \endentry
+    \entry{exception_processes}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6a657c57b5943bdc829427bef740483f}{%
+           family={Rexford},
+           familyi={R\bibinitperiod},
+           given={Jennifer},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{6a657c57b5943bdc829427bef740483f}
+      \strng{fullhash}{6a657c57b5943bdc829427bef740483f}
+      \strng{bibnamehash}{6a657c57b5943bdc829427bef740483f}
+      \strng{authorbibnamehash}{6a657c57b5943bdc829427bef740483f}
+      \strng{authornamehash}{6a657c57b5943bdc829427bef740483f}
+      \strng{authorfullhash}{6a657c57b5943bdc829427bef740483f}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 15.05.2022}
+      \field{title}{Exceptions and Processes}
+      \verb{urlraw}
+      \verb https://www.cs.princeton.edu/courses/archive/spr11/cos217/lectures/17ExceptionsAndProcesses.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.cs.princeton.edu/courses/archive/spr11/cos217/lectures/17ExceptionsAndProcesses.pdf
+      \endverb
+    \endentry
+    \entry{rowhammer}{article}{}
+      \name{author}{2}{}{%
+        {{hash=693e97d786f9e72c7dc36d791d2115fe}{%
+           family={Seaborn},
+           familyi={S\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=27644b1e16bbdf255bc253fcfd086b98}{%
+           family={Dullien},
+           familyi={D\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{ad7c91afc7f7951911f8213218c3241c}
+      \strng{fullhash}{ad7c91afc7f7951911f8213218c3241c}
+      \strng{bibnamehash}{ad7c91afc7f7951911f8213218c3241c}
+      \strng{authorbibnamehash}{ad7c91afc7f7951911f8213218c3241c}
+      \strng{authornamehash}{ad7c91afc7f7951911f8213218c3241c}
+      \strng{authorfullhash}{ad7c91afc7f7951911f8213218c3241c}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Black Hat}
+      \field{title}{Exploiting the DRAM rowhammer bug to gain kernel privileges}
+      \field{volume}{15}
+      \field{year}{2015}
+      \field{pages}{71}
+      \range{pages}{1}
+    \endentry
+    \entry{shacham2007geometry}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=8e72ae85d346fe6dea613a2090664c28}{%
+           family={Shacham},
+           familyi={S\bibinitperiod},
+           given={Hovav},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{8e72ae85d346fe6dea613a2090664c28}
+      \strng{fullhash}{8e72ae85d346fe6dea613a2090664c28}
+      \strng{bibnamehash}{8e72ae85d346fe6dea613a2090664c28}
+      \strng{authorbibnamehash}{8e72ae85d346fe6dea613a2090664c28}
+      \strng{authornamehash}{8e72ae85d346fe6dea613a2090664c28}
+      \strng{authorfullhash}{8e72ae85d346fe6dea613a2090664c28}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 14th ACM conference on Computer and communications security}
+      \field{title}{The geometry of innocent flesh on the bone: Return-into-libc without function calls (on the x86)}
+      \field{year}{2007}
+      \field{pages}{552\bibrangedash 561}
+      \range{pages}{10}
     \endentry
     \entry{tomasulo1967}{article}{}
       \name{author}{1}{}{%
@@ -229,6 +892,49 @@
       \field{year}{1967}
       \field{pages}{25\bibrangedash 33}
       \range{pages}{9}
+    \endentry
+    \entry{flush_reload}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=cd7579fd1f745b58396f5395d38e1a5c}{%
+           family={Yarom},
+           familyi={Y\bibinitperiod},
+           given={Yuval},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=69adf878a959157f640bfb5b99256799}{%
+           family={Falkner},
+           familyi={F\bibinitperiod},
+           given={Katrina},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {San Diego, CA}%
+      }
+      \list{publisher}{1}{%
+        {USENIX Association}%
+      }
+      \strng{namehash}{5f81b254e7e87fe50823c16d634b960a}
+      \strng{fullhash}{5f81b254e7e87fe50823c16d634b960a}
+      \strng{bibnamehash}{5f81b254e7e87fe50823c16d634b960a}
+      \strng{authorbibnamehash}{5f81b254e7e87fe50823c16d634b960a}
+      \strng{authornamehash}{5f81b254e7e87fe50823c16d634b960a}
+      \strng{authorfullhash}{5f81b254e7e87fe50823c16d634b960a}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{23rd USENIX Security Symposium (USENIX Security 14)}
+      \field{isbn}{978-1-931971-15-7}
+      \field{month}{8}
+      \field{title}{{FLUSH+RELOAD}: A High Resolution, Low Noise, L3 Cache {Side-Channel} Attack}
+      \field{year}{2014}
+      \field{pages}{719\bibrangedash 732}
+      \range{pages}{14}
+      \verb{urlraw}
+      \verb https://www.usenix.org/conference/usenixsecurity14/technical-sessions/presentation/yarom
+      \endverb
+      \verb{url}
+      \verb https://www.usenix.org/conference/usenixsecurity14/technical-sessions/presentation/yarom
+      \endverb
     \endentry
   \enddatalist
 \endrefsection

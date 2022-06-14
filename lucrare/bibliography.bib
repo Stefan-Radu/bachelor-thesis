@@ -1,8 +1,7 @@
 @article{meltdown2018,
   title={Meltdown},
   author={Lipp, Moritz and Schwarz, Michael and Gruss, Daniel and Prescher, Thomas and Haas, Werner and Mangard, Stefan and Kocher, Paul and Genkin, Daniel and Yarom, Yuval and Hamburg, Mike},
-  journal={arXiv preprint arXiv:1801.01207},
-  year={2018}
+  journal={arXiv preprint arXiv:1801.01207}, year={2018}
 }
 
 @inproceedings{spectre2019,
@@ -12,6 +11,14 @@
   pages={1--19},
   year={2019},
   organization={IEEE}
+}
+
+@inproceedings{bhi_spectre_2022,
+  title={Branch history injection: On the effectiveness of hardware mitigations against cross-privilege Spectre-v2 attacks},
+  author={Barberis, Enrico and Frigo, Pietro and Muench, Marius and Bos, Herbert and Giuffrida, Cristiano},
+  booktitle={USENIX Security},
+  volume={11},
+  year={2022}
 }
 
 @misc{out_of_order_execution,
@@ -45,5 +52,213 @@
 @misc{rdtscp,
   title={RDTSCP — Read Time-Stamp Counter and Processor ID},
   url={https://www.felixcloutier.com/x86/rdtscp},
-  note={Accesat: 12.05.2022},
+  note={Accesat: 12.05.2022}
+}
+
+@misc{clflush,
+  title={CLFLUSH — Flush Cache Line},
+  url={https://www.felixcloutier.com/x86/clflush},
+  note={Accesat: 13.05.2022}
+}
+
+@misc{caching,
+  title={Caching},
+  url={https://cseweb.ucsd.edu/classes/sp13/cse141-a/Slides/10_Caches_detail.pdf},
+  note={Accesat: 13.05.2022}
+}
+
+@misc{cache_attacks,
+  title={Cache Attacks},
+  author={Biswabandan Panda},
+  url={https://www.cse.iitk.ac.in/users/biswap/CS665/lectures/L6.pdf},
+  note={Accesat: 13.05.2022}
+
+}
+
+@inproceedings {flush_reload,
+  author = {Yuval Yarom and Katrina Falkner},
+  title = {{FLUSH+RELOAD}: A High Resolution, Low Noise, L3 Cache {Side-Channel} Attack},
+  booktitle = {23rd USENIX Security Symposium (USENIX Security 14)},
+  year = {2014},
+  isbn = {978-1-931971-15-7},
+  address = {San Diego, CA},
+  pages = {719--732},
+  url = {https://www.usenix.org/conference/usenixsecurity14/technical-sessions/presentation/yarom},
+  publisher = {USENIX Association},
+  month = aug
+}
+
+@misc{processes,
+  title={Processes},
+  url={https://www.gnu.org/software/libc/manual/html_node/Processes.html},
+  note={Accesat: 14.05.2022}
+}
+
+@misc{exception_processes,
+  title={Exceptions and Processes},
+  author={Jennifer Rexford},
+  url={https://www.cs.princeton.edu/courses/archive/spr11/cos217/lectures/17ExceptionsAndProcesses.pdf},
+  note={Accesat: 15.05.2022}
+}
+
+@misc{kernel,
+  title={Kernel},
+  url={https://cs61.seas.harvard.edu/site/2021/Kernel/},
+  note={Accesat: 16.05.2022}
+}
+
+@incollection{denning2006locality,
+  title={The locality principle},
+  author={Denning, Peter J},
+  booktitle={Communication Networks And Computer Systems: A Tribute to Professor Erol Gelenbe},
+  pages={43--67},
+  year={2006},
+  publisher={World Scientific}
+}
+
+@misc{i5_8250U,
+  title={Intel® Core™ i5-8250U Processor},
+  url={https://ark.intel.com/content/www/us/en/ark/products/124967/intel-core-i58250u-processor-6m-cache-up-to-3-40-ghz.html},
+  note={Accesat: 22.05.2022},
+}
+
+@inproceedings{gruss2016prefetch,
+  title={Prefetch side-channel attacks: Bypassing SMAP and kernel ASLR},
+  author={Gruss, Daniel and Maurice, Cl{\'e}mentine and Fogh, Anders and Lipp, Moritz and Mangard, Stefan},
+  booktitle={Proceedings of the 2016 ACM SIGSAC conference on computer and communications security},
+  pages={368--379},
+  year={2016}
+}
+
+@article{grisenthwaite2018cache,
+  title={Cache speculation side-channels},
+  author={Grisenthwaite, Richard},
+  journal={Jan., Arm Limited},
+  pages={1--13},
+  year={2018}
+}
+
+@inproceedings{gruss2017kaslr,
+  title={Kaslr is dead: long live kaslr},
+  author={Gruss, Daniel and Lipp, Moritz and Schwarz, Michael and Fellner, Richard and Maurice, Cl{\'e}mentine and Mangard, Stefan},
+  booktitle={International Symposium on Engineering Secure Software and Systems},
+  pages={161--176},
+  year={2017},
+  organization={Springer}
+}
+
+@misc{seedlabs_meltdown,
+  title={Meltdown Attack Lab},
+  url={https://seedsecuritylabs.org/Labs_20.04/Files/Meltdown_Attack/Meltdown_Attack.pdf},
+  note={Accesat: 23.05.2022},
+  year={2018},
+  author={Wenliang Du},
+}
+
+@misc{intelfix,
+  title={Intel’s 9th-generation ‘Ice Lake’ CPUs will have fixes for Meltdown, Spectre},
+  url={https://www.digitaltrends.com/computing/intel-meltdown-spectre-silicon-fixes-ice-lake},
+  note={Accesat: 25.05.2022},
+  year={2018},
+  author={Kevin Parrish},
+}
+
+@inproceedings{shacham2007geometry,
+  title={The geometry of innocent flesh on the bone: Return-into-libc without function calls (on the x86)},
+  author={Shacham, Hovav},
+  booktitle={Proceedings of the 14th ACM conference on Computer and communications security},
+  pages={552--561},
+  year={2007}
+}
+
+@article{homescu2012microgadgets,
+  title={Microgadgets: Size Does Matter in Turing-Complete Return-Oriented Programming.},
+  author={Homescu, Andrei and Stewart, Michael and Larsen, Per and Brunthaler, Stefan and Franz, Michael},
+  journal={WOOT},
+  volume={12},
+  pages={64--76},
+  year={2012}
+}
+
+@misc{smap,
+  title={Supervisor mode access prevention},
+  url={https://lwn.net/Articles/517475/},
+  author={Jonathan Corbet},
+  year={2012},
+  note={Accesat: 30.05.2022},
+}
+
+@misc{smep,
+  title={Supervisor Mode Execution Protection},
+  url={https://web.archive.org/web/20160803075007/https://www.ncsi.com/nsatc11/presentations/wednesday/emerging_technologies/fischer.pdf},
+  author={Stephen Fischer},
+  year={2011},
+  note={Accesat: 30.05.2022},
+}
+
+@misc{kernel_redhat,
+  title={https://www.redhat.com/en/topics/linux/what-is-the-linux-kernel},
+  url={https://www.redhat.com/en/topics/linux/what-is-the-linux-kernel},
+  year={2019},
+  note={Accesat: 29.05.2022},
+}
+
+@misc{v1_mitigations,
+  title={Spectre v1 Mitigation via Compiler options},
+  url={https://www.methodpark.de/blog/spectre-v1-mitigation-via-compiler-options/},
+  year={2021},
+  author={Oliver Rehberg},
+  note={Accesat: 31.05.2022},
+}
+
+@misc{intel_mitigations,
+  title={INTEL-SA-00088},
+  url={https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/advisory-guidance/branch-target-injection.html},
+  year={2018},
+  note={Accesat: 31.05.2022},
+}
+
+@misc{amd_mitigations,
+  title={AMD64 TECHNOLOGY INDIRECT BRANCH CONTROL EXTENSION},
+  url={https://developer.amd.com/wp-content/resources/Architecture_Guidelines_Update_Indirect_Branch_Control.pdf},
+  year={2018}, 
+  note={Accesat: 31.05.2022},
+}
+
+@article{rowhammer,
+  title={Exploiting the DRAM rowhammer bug to gain kernel privileges},
+  author={Seaborn, Mark and Dullien, Thomas},
+  journal={Black Hat},
+  volume={15},
+  pages={71},
+  year={2015}
+}
+
+@article{timing_practical,
+  title={Remote timing attacks are practical},
+  author={Brumley, David and Boneh, Dan},
+  journal={Computer Networks},
+  volume={48},
+  number={5},
+  pages={701--716},
+  year={2005},
+  publisher={Elsevier}
+}
+
+@misc{percival2005cache,
+  title={Cache missing for fun and profit},
+  author={Percival, Colin},
+  year={2005},
+  publisher={BSDCan Ottawa}
+}
+
+@article{cold_boot,
+  title={Lest we remember: cold-boot attacks on encryption keys},
+  author={Halderman, J Alex and Schoen, Seth D and Heninger, Nadia and Clarkson, William and Paul, William and Calandrino, Joseph A and Feldman, Ariel J and Appelbaum, Jacob and Felten, Edward W},
+  journal={Communications of the ACM},
+  volume={52},
+  number={5},
+  pages={91--98},
+  year={2009},
+  publisher={ACM New York, NY, USA}
 }

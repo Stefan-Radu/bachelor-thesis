@@ -1,1 +1,91 @@
 \chapter{Introducere}
+
+\section{Context}
+
+\emph{Meltodwn} si \emph{Spectre} fac parte din clasa larga a Atacurilor de tip
+\emph{Side-Channel}, care exploateaza mai degraba efecte secundare rezultate
+din implementarea unui sistem, decat defecte in implementarea algoritmilor ce
+ruleaza pe acel sistem. De-a lungul timpului ai aparut numeroase atacuri de tip
+\emph{Side-channel}:
+
+\begin{itemize}
+  \item Timing attacks. Aceste atacuri au ca scop compromiterea unui sistem prin
+    intermediul analizei statistice a timpilor de executie ai unui algoritm pe   
+    diverse seturi de date de intrare (eg. compromiterea unui sistem de criptare
+    RSA la distanta \cite{timing_practical})
+  \item Cache attacks. Aceste atacuri se bazeaza pe abilitatea unui atacator
+    a monitoriza accesarile victimei a unor zone de memorie partajate si deducerea
+    unor concluzii din modul in care aceste accesari influenteaza cache-ul 
+    procesorului. In cazuri extreme s-a demonstrat ca se pot divulga chei criptografice 
+    secrete prin intermediul acestor tehnici \cite{percival2005cache}.
+  \item Data remanence attacks. Aceste atacuri implica accesul asupra unor date
+    dupa o presupusa stergere a acestora in prealabil. Un exemplu clar este 
+    atacul de tip \emph{Cold Boot} \cite{cold_boot} in care un atacator cu
+    acces fizic la o masina paoate citi intreaga memorie RAM dupa efectuarea
+    unui resetari a computerului.
+  \item Rowhammer are un loc special in clasa de atacuri de tip \emph{Side-Channel}. 
+    Prin accesul repetat al unei zone de memorie s-a observat ca incarcatura elecatrica
+    poate afecta zonele adiacente, provocand scurgeri de informatie. Pe baza acestei
+    tehnici s-au putut construi atacuri de tip escalare de privilegii \cite{rowhammer}.
+  \item Mai exista si alte tipuri de atacuri care exploateaza consumul energetic,
+    campul electromagnetic generat de componentele electronice, sau chiar si sunetul
+    generat de sistem.
+\end{itemize}
+
+\emph{Meltodwn} si \emph{Spectre} se folosesc de idei asemanatoare cu cele
+mentionate in \emph{Timing Attacks} si in \emph{Cache Attacks} pentru a crea un
+canal de comunicare ascuns. Pe acest canal se transmit informatii accesate in
+mod malititos prin intermediul unor hibe in implementarea la nivel hardware a
+compunterelor modern. Se va descrie cum exploatarea acestor defecte este facuta
+posibila prin intermediul executiei speculative in cadrul procesorului.
+Executia speculativa prcare esupune executia in avans a instructiunuilor pentru
+a salva timpi morti si a imbunatati performanta. Fluxul de executie poate fi
+manipulat in asa fel incat speculativ sa se execute instructiuni care nu s-ar
+executa vreodata in cadrul executiei normale a programului. Pentru mentinerea
+consistentei si corectitudinii rezultatelor obitnute in urma executiei
+algoritmului, rezultatele instructiunilor executate speculativ in mod eronat sunt
+omise, iar starea interna este resetata. In momentul resetarii, starea cache-ului
+nu este si ea resetata, iar acest fapt poate fi exploatat, iar informatiile obtinute
+transmise printr-un \emph{side-channel}.
+
+\section{Motivatia Personala}
+
+Din fire, incerc mereu sa aprofundez cat mai in amanunt subiectele care ma
+intereseaza, pentru a intelege in profunzime. Natural -- consider eu -- am
+ajuns atras de subdomeniul securitatii care presupune o intelegere a sistemelor
+de informatii. Dintre atacurile cibernetice, \emph{Spectre} si \emph{Meltdown}
+mi-au starnit interesul pe deoparte prin rezultatele remarcabile obtinute si pe
+de alta parte prin nivelul ridicat de subtilitate al vulnerabilitatilor
+exploatate.
+
+\section{Scopul Lucrarii}
+
+Lucrarea de fata este rezultatul studiului personal al materialelor originale
+care expuneau aceste atacuri. Aceasta are drept scop explicarea clara, dar
+succinta a \emph{Meltdown} si \emph{Spectre}, intr-un mod accesibil cititorilor
+interesati, dar nu neaparat neavizati. Va fi de asemenea explicata o
+implementare cu scop demonstrativ in care un proces neprivilegiat citeste in
+mod neautorizat zone de memorie dintr-un proces victima, prin intermediul
+tehicilor descrise pe parcurs.
+
+\section{Structura Lucrarii}
+
+Lucrarea este impartita in urmatoarele capitole:
+
+\begin{enumerate}
+  \item Introducere -- se prezinta o viziune de ansamblu asupra atacurilor
+    ce urmeaza a se fie prezentate,un mic istoric al tehiniclor si motivatia
+    personala pentru realizarea acestei lucrari.
+  \item Preliminarii -- se prezinta notiuni de \emph{Sisteme de Operare},
+    \emph{Arhitectura Sistemelor de Calcul} si \emph{Securitate} relevante
+    intelegerii atacurilor discutate.
+  \item Atacul Meltdown -- se discuta detalii de functionalitate, metode de mitigare
+    si detalii de reproducere a atacul meltdown.
+  \item Atacuri Spectre -- se ilustreaza deosebirile fata de Meltdown, precum si
+    detalii de specifice de functionalitate pentru cele doua variante principale ale
+    Spectre. Sunt prezentate metode de mitigare si starea actuala a
+    vulnerabilitatilor.
+  \item POC Spectre -- se prezinta o implementare demonstrativa a \emph{Spectre v1}
+  \item Concluzii -- se sumarizeaza cele discutate pe parcurs si mentioneaza
+    directiile viitoare
+\end{enumerate}

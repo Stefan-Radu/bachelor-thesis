@@ -10,7 +10,10 @@
 %
 % Aceast sablon este licentiat sub Creative Commons Attribution 4.0 International License.
 
-\documentclass{report}[12pt, a4paper]
+\documentclass[12pt, a4paper]{report}
+
+% Modificarea geometriei paginii
+\usepackage{geometry}
 
 % Suport pentru diacritice și alte simboluri
 \usepackage{fontspec}
@@ -49,9 +52,6 @@
 \usepackage{setspace}
 \onehalfspacing
 
-% Modificarea geometriei paginii
-\usepackage{geometry}
-
 % Include funcțiile de grafică
 \usepackage{graphicx}
 % Încarcă imaginile din directorul `images`
@@ -59,6 +59,34 @@
 
 % Listări de cod
 \usepackage{listings}
+
+% definirea culorilor
+\usepackage{xcolor}
+
+\definecolor{codeblue}{rgb}{0.11, 0.56, 1}
+\definecolor{codegold}{rgb}{0.8, 0.64, 0}
+\definecolor{codegray}{rgb}{0.3, 0.3, 0.3}
+\definecolor{codepurple}{rgb}{0.7, 0.5, 0.7}
+
+\lstdefinestyle{mystyle}{
+    commentstyle=\color{codepurple},
+    keywordstyle=\color{codeblue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codegold},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
 
 % Linkuri interactive în PDF
 \usepackage[
@@ -126,6 +154,7 @@
 \include{0-title}
 
 \restoregeometry
+\newgeometry{margin=2.55cm}
 
 \addtocounter{page}{1}
 
@@ -141,8 +170,10 @@
 
 \include{1-introducere}
 \include{2-preliminarii}
-\include{3-continut}
-\include{4-concluzii}
+\include{3-meltdown}
+\include{4-spectre}
+\include{5-poc}
+\include{6-concluzii}
  
 \printbibliography[heading=bibintoc]
 
