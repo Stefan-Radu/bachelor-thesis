@@ -6,6 +6,8 @@
 #include <sys/mman.h>
 #include <sys/file.h>
 #include <errno.h>
+#include <time.h>
+#include <signal.h>
 #ifdef _MSC_VER
 #include <intrin.h>        /* for rdtscp and clflush */
 #pragma optimize("gt",on)
@@ -16,6 +18,7 @@
 /********************************************************************
 Analysis code
 ********************************************************************/
+
 #define CACHE_HIT_THRESHOLD (108)  /* assume cache hit if time <= threshold */
 
 uint8_t *array2;
@@ -83,7 +86,14 @@ void read_index(size_t index, int tries, int train_rounds, int round_length) {
 	}
 }
 
+static volatile int running = 1;
+void intHandler(int dummy) {
+    running = 0;
+}
+
 int main(int argc, const char **argv) {
+	signal(SIGINT, intHandler);
+
 	// map share memory area to array2 (cache side channel)
 	int fd = open(shared_memory_name, O_RDONLY);
 	array2 = (uint8_t*)mmap(NULL, 256 * 512, PROT_READ, MAP_SHARED, fd, 0);
@@ -107,7 +117,8 @@ int main(int argc, const char **argv) {
 	printf("Starting from offset %zu\n\n", offset);
 
 	printf("%016lX | ", offset);
-	for (int tries = 0; ; ++tries) {
+	clock_t before = clock();
+	for (int tries = 0; running != 0 ; ++tries) {
 		// reset results
 		for (i = 0; i < 256; ++i) {
 			results[i] = 0;
@@ -138,4 +149,9 @@ int main(int argc, const char **argv) {
 		// next memory address
 		++offset;
 	}
+
+	clock_t diff = clock() - before;
+	double msec = (double) diff / CLOCKS_PER_SEC;
+	printf("\n====================\nPrinted %d bytes in %0.2lf seconds \n", printed, msec);
+	printf("Speed: %0.4lf KB / second", printed / msec / 1024);
 }

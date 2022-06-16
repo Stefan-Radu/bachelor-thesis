@@ -3,85 +3,100 @@
 \selectlanguage *{romanian}
 \selectlanguage *{english}
 \selectlanguage *{romanian}
-\contentsline {chapter}{\numberline {1}Introducere}{5}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Context}{5}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Motivatia Personala}{6}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Scopul Lucrarii}{6}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Structura Lucrarii}{6}{section.1.4}%
-\contentsline {chapter}{\numberline {2}Preliminarii}{8}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Notiuni de Sisteme de Operare}{8}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Kernel}{8}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Race Condition / Intrecere la rulare}{8}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}IPC}{9}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Exceptii de sistem}{9}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Procese}{9}{subsection.2.1.5}%
-\contentsline {subsection}{\numberline {2.1.6}Memorie Virtuala}{10}{subsection.2.1.6}%
-\contentsline {section}{\numberline {2.2}Notiuni de Arhitectura Sistemelor de Calcul}{10}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}SMAP si SMEP}{10}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Out-of-order Execution \& Instructiuni Tranzitorii}{11}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Branch Prediction \& Executie Speculativa}{11}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}CPU Cache}{12}{subsection.2.2.4}%
-\contentsline {section}{\numberline {2.3}Notiuni de Securitate}{12}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Atacuri asupra memoriei cache}{12}{subsection.2.3.1}%
-\contentsline {subsubsection}{Observatie}{13}{section*.2}%
-\contentsline {subsubsection}{FLUSH and RELOAD}{13}{section*.3}%
-\contentsline {subsubsection}{Alte tipuri de atacuri asupra memoriei cache}{13}{section*.4}%
-\contentsline {subsection}{\numberline {2.3.2}Covert-channel}{14}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Atacuri Speculative}{14}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}ROP}{14}{subsection.2.3.4}%
-\contentsline {chapter}{\numberline {3}Atacul Meltdown}{16}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Descrierea Atacului}{16}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Structura Memoriei Virtuale in Cadrul unui Proces}{16}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Exectuarea Instructiunilor Tranzitorii}{17}{subsection.3.1.2}%
-\contentsline {subsubsection}{Observatie - Principiul Localitatii}{18}{section*.5}%
-\contentsline {subsection}{\numberline {3.1.3}Gestionarea Exceptiilor}{18}{subsection.3.1.3}%
-\contentsline {subsubsection}{Duplicarea Procesului}{18}{section*.6}%
-\contentsline {subsubsection}{Signal Handler}{19}{section*.7}%
-\contentsline {subsubsection}{Suprimarea Exceptiilor}{19}{section*.8}%
-\contentsline {subsection}{\numberline {3.1.4}Trecerea din planul micro in planul macro}{19}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}Scenariul si realizarea atacului Meltdown}{20}{subsection.3.1.5}%
-\contentsline {section}{\numberline {3.2}Sisteme evaluate}{21}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Linux}{21}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Microsoft Windows}{21}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Android}{22}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Containere}{22}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}ARM si AMD}{22}{subsection.3.2.5}%
-\contentsline {section}{\numberline {3.3}Performanta}{22}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Secretul in cache}{22}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Secretul in afara cache-ului}{23}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Metode de mitigare}{23}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Hardware}{23}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Software -- KAISER}{23}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Reproducerea Atacului}{24}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Platforma}{24}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Aspecte importante}{24}{subsection.3.5.2}%
-\contentsline {subsubsection}{Secretul}{25}{section*.9}%
-\contentsline {subsubsection}{Optimizari}{25}{section*.10}%
-\contentsline {subsection}{\numberline {3.5.3}Starea actuala - Testarea efectului KPTI}{26}{subsection.3.5.3}%
-\contentsline {chapter}{\numberline {4}Atacuri Spectre}{27}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Diferente fata de Meltdown}{27}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Spectre V1}{28}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Descrierea Atacului}{28}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Reproducerea atacului}{29}{subsection.4.2.2}%
-\contentsline {subsubsection}{Javascript}{29}{section*.11}%
-\contentsline {subsubsection}{Experimente personale}{30}{section*.12}%
-\contentsline {section}{\numberline {4.3}Spectre V2}{30}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Descrierea atacului}{30}{subsection.4.3.1}%
-\contentsline {subsubsection}{Antrenarea}{30}{section*.13}%
-\contentsline {subsubsection}{Alegerea adresei de destinatie}{31}{section*.14}%
-\contentsline {subsection}{\numberline {4.3.2}Rezultate}{31}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Metode de Mitigare}{32}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Software}{32}{subsection.4.4.1}%
-\contentsline {subsubsection}{Compilatoare}{32}{section*.15}%
-\contentsline {subsubsection}{Retpoline}{32}{section*.16}%
-\contentsline {subsubsection}{ARM}{32}{section*.17}%
-\contentsline {subsection}{\numberline {4.4.2}Hardware}{33}{subsection.4.4.2}%
-\contentsline {subsubsection}{Intel/AMD IBPB}{33}{section*.18}%
-\contentsline {subsubsection}{Intel/AMD STIBP}{33}{section*.19}%
-\contentsline {subsubsection}{Intel/AMD (e)IBRS}{33}{section*.20}%
-\contentsline {section}{\numberline {4.5}Starea Actuala}{33}{section.4.5}%
-\contentsline {chapter}{\numberline {5}POC -- Spectre-V1}{34}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Atacator}{34}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Victima}{37}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Concluzii si Directii Viitoare}{41}{chapter.6}%
-\contentsline {chapter}{Bibliografie}{42}{chapter*.21}%
+\contentsline {chapter}{\numberline {1}Introducere}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Context}{6}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Motivația Personală}{7}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Scopul Lucrării}{7}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Contribuții personale}{7}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Structura Lucrării}{8}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Preliminarii}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Noțiuni de Sisteme de Operare}{9}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Kernel}{9}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Race Condition / Întrecere la rulare}{9}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}IPC}{10}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Excepții de sistem}{10}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Procese}{10}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Memorie Virtuală}{11}{subsection.2.1.6}%
+\contentsline {section}{\numberline {2.2}Noțiuni de Arhitectura Sistemelor de Calcul}{11}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}SMAP și SMEP}{11}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Out-of-order Execution}{12}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Execuție Speculativă \& Prezicerea ramurilor de execuție}{12}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}CPU Cache}{13}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Noțiuni de Securitate}{13}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Atacuri asupra memoriei cache}{13}{subsection.2.3.1}%
+\contentsline {subsubsection}{Observație}{14}{section*.2}%
+\contentsline {subsubsection}{FLUSH and RELOAD}{14}{section*.3}%
+\contentsline {subsubsection}{Alte tipuri de atacuri asupra memoriei cache}{15}{section*.4}%
+\contentsline {subsection}{\numberline {2.3.2}Covert-channel}{15}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Atacuri Speculative}{15}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}ROP}{16}{subsection.2.3.4}%
+\contentsline {chapter}{\numberline {3}Atacul Meltdown}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Descrierea Atacului}{17}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Structura Memoriei Virtuale în Cadrul unui Proces}{17}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Exectuarea Instrucțiunilor Tranzitorii}{18}{subsection.3.1.2}%
+\contentsline {subsubsection}{Observație - Principiul Localității}{19}{section*.5}%
+\contentsline {subsection}{\numberline {3.1.3}Gestionarea Excepțiilor}{20}{subsection.3.1.3}%
+\contentsline {subsubsection}{Duplicarea Procesului}{20}{section*.6}%
+\contentsline {subsubsection}{Signal Handler}{20}{section*.7}%
+\contentsline {subsubsection}{Suprimarea Excepțiilor}{20}{section*.8}%
+\contentsline {subsection}{\numberline {3.1.4}Trecerea din planul micro în planul macro}{20}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Scenariul și realizarea atacului Meltdown}{22}{subsection.3.1.5}%
+\contentsline {section}{\numberline {3.2}Sisteme evaluate}{23}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Linux}{23}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Microsoft Windows}{23}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Android}{23}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Containere}{24}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}ARM și AMD}{24}{subsection.3.2.5}%
+\contentsline {section}{\numberline {3.3}Performanța}{24}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Secretul în cache}{24}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Secretul în afara cache-ului}{25}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Metode de mitigare}{25}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Hardware}{25}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Software -- KAISER}{25}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Reproducerea Atacului}{27}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Platforma}{27}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Aspecte importante}{27}{subsection.3.5.2}%
+\contentsline {subsubsection}{Secretul}{27}{section*.9}%
+\contentsline {subsubsection}{Optimizări}{27}{section*.10}%
+\contentsline {subsection}{\numberline {3.5.3}Starea actuală - Testarea efectului KPTI}{28}{subsection.3.5.3}%
+\contentsline {chapter}{\numberline {4}Atacuri Spectre}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Diferențe față de Meltdown}{29}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Spectre V1}{30}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Descrierea Atacului}{30}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Reproducerea atacului}{32}{subsection.4.2.2}%
+\contentsline {subsubsection}{Javascript}{32}{section*.11}%
+\contentsline {subsubsection}{Experimente personale}{32}{section*.12}%
+\contentsline {section}{\numberline {4.3}Spectre V2}{32}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Descrierea atacului}{33}{subsection.4.3.1}%
+\contentsline {subsubsection}{Antrenarea}{33}{section*.13}%
+\contentsline {subsubsection}{Alegerea adresei de destinație}{33}{section*.14}%
+\contentsline {subsection}{\numberline {4.3.2}Rezultate}{34}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Metode de Mitigare}{34}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Software}{35}{subsection.4.4.1}%
+\contentsline {subsubsection}{Compilatoare}{35}{section*.15}%
+\contentsline {subsubsection}{Retpoline}{35}{section*.16}%
+\contentsline {subsubsection}{ARM}{35}{section*.17}%
+\contentsline {subsection}{\numberline {4.4.2}Hardware}{35}{subsection.4.4.2}%
+\contentsline {subsubsection}{Intel/AMD IBPB}{35}{section*.18}%
+\contentsline {subsubsection}{Intel/AMD STIBP}{36}{section*.19}%
+\contentsline {subsubsection}{Intel/AMD (e)IBRS}{36}{section*.20}%
+\contentsline {section}{\numberline {4.5}Starea Actuală}{36}{section.4.5}%
+\contentsline {chapter}{\numberline {5}POC -- Spectre-V1}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Detalii de implementare}{37}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Scenariul}{37}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Vulnerabilitatea}{37}{subsection.5.1.2}%
+\contentsline {subsubsection}{Zona partajată}{38}{section*.21}%
+\contentsline {subsection}{\numberline {5.1.3}Citirea unui byte}{38}{subsection.5.1.3}%
+\contentsline {subsubsection}{Pasul 1 - Preluarea lacătului}{39}{section*.22}%
+\contentsline {subsubsection}{Pasul 2 - Transmiterea informației}{39}{section*.23}%
+\contentsline {subsubsection}{Pasul 3 - Flush și eliberarea lacătului}{40}{section*.24}%
+\contentsline {subsubsection}{Pasul 4 - Victima preia lacătul}{40}{section*.25}%
+\contentsline {subsubsection}{Pasul 5 - Victima procesează indicii primiți}{40}{section*.26}%
+\contentsline {subsubsection}{Pasul 6 - Atacatorul finalizează FLUSH \& RELOAD}{41}{section*.27}%
+\contentsline {subsubsection}{Citirea datelor secrete}{41}{section*.28}%
+\contentsline {section}{\numberline {5.2}Rezultate}{41}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Observații interesante}{42}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Pragul pentru determinarea cache-hit-rilor}{42}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Flag-uri de compilare și tipul variabilelor}{43}{subsection.5.3.2}%
+\contentsline {chapter}{\numberline {6}Concluzii și Direcții Viitoare}{44}{chapter.6}%
+\contentsline {chapter}{Bibliografie}{45}{chapter*.29}%

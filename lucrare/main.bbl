@@ -123,6 +123,34 @@
       \verb https://cseweb.ucsd.edu/classes/sp13/cse141-a/Slides/10_Caches_detail.pdf
       \endverb
     \endentry
+    \entry{amd_response}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f1df80e54c7dce6e2e2822558cb603ab}{%
+           family={Campbell},
+           familyi={C\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f1df80e54c7dce6e2e2822558cb603ab}
+      \strng{fullhash}{f1df80e54c7dce6e2e2822558cb603ab}
+      \strng{bibnamehash}{f1df80e54c7dce6e2e2822558cb603ab}
+      \strng{authorbibnamehash}{f1df80e54c7dce6e2e2822558cb603ab}
+      \strng{authornamehash}{f1df80e54c7dce6e2e2822558cb603ab}
+      \strng{authorfullhash}{f1df80e54c7dce6e2e2822558cb603ab}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 15.05.2022}
+      \field{title}{AMD releases response to Meltdown and Spectre exploits}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.overclock3d.net/news/cpu_mainboard/amd_releases_response_to_meltdown_and_spectre_exploits/1
+      \endverb
+      \verb{url}
+      \verb https://www.overclock3d.net/news/cpu_mainboard/amd_releases_response_to_meltdown_and_spectre_exploits/1
+      \endverb
+    \endentry
     \entry{clflush}{misc}{}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
@@ -162,6 +190,19 @@
       \endverb
       \verb{url}
       \verb https://lwn.net/Articles/517475/
+      \endverb
+    \endentry
+    \entry{covert_channel}{misc}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 15.05.2022}
+      \field{title}{Covert Channel: The Hidden Network}
+      \verb{urlraw}
+      \verb https://www.hackingarticles.in/covert-channel-the-hidden-network/
+      \endverb
+      \verb{url}
+      \verb https://www.hackingarticles.in/covert-channel-the-hidden-network/
       \endverb
     \endentry
     \entry{denning2006locality}{incollection}{}
@@ -217,6 +258,19 @@
       \endverb
       \verb{url}
       \verb https://seedsecuritylabs.org/Labs_20.04/Files/Meltdown_Attack/Meltdown_Attack.pdf
+      \endverb
+    \endentry
+    \entry{file_locks}{misc}{}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labeltitlesource}{title}
+      \field{note}{Accesat: 15.05.2022}
+      \field{title}{File Locks}
+      \verb{urlraw}
+      \verb https://www.gnu.org/software/libc/manual/html_node/File-Locks.html
+      \endverb
+      \verb{url}
+      \verb https://www.gnu.org/software/libc/manual/html_node/File-Locks.html
       \endverb
     \endentry
     \entry{grisenthwaite2018cache}{article}{}
@@ -863,6 +917,33 @@
       \field{year}{2007}
       \field{pages}{552\bibrangedash 561}
       \range{pages}{10}
+    \endentry
+    \entry{rop_figure}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=08eac93e196ef5f9fc8762c3242f40a5}{%
+           family={Shaw},
+           familyi={S\bibinitperiod},
+           given={R.\bibnamedelimi S.},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{08eac93e196ef5f9fc8762c3242f40a5}
+      \strng{fullhash}{08eac93e196ef5f9fc8762c3242f40a5}
+      \strng{bibnamehash}{08eac93e196ef5f9fc8762c3242f40a5}
+      \strng{authorbibnamehash}{08eac93e196ef5f9fc8762c3242f40a5}
+      \strng{authornamehash}{08eac93e196ef5f9fc8762c3242f40a5}
+      \strng{authorfullhash}{08eac93e196ef5f9fc8762c3242f40a5}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Call Stack Layout}
+      \field{year}{2007}
+      \verb{urlraw}
+      \verb https://commons.wikimedia.org/w/index.php?curid=1956587
+      \endverb
+      \verb{url}
+      \verb https://commons.wikimedia.org/w/index.php?curid=1956587
+      \endverb
     \endentry
     \entry{tomasulo1967}{article}{}
       \name{author}{1}{}{%
