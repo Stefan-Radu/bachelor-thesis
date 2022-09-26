@@ -29,6 +29,6 @@ read the whole address space of another process.
 
 ### Presentation
 
-[slides]("./prezentare/Stefan_Radu - Atacuri Speculative.pdf")
+[slides](./prezentare/Stefan_Radu%20-%20Atacuri%20Speculative.pdf)
 
 ### Final Document
