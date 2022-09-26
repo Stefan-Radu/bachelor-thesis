@@ -32,3 +32,5 @@ read the whole address space of another process.
 [slides](./prezentare/Stefan_Radu%20-%20Atacuri%20Speculative.pdf)
 
 ### Final Document
+
+Checkout the actual paper [here](https://github.com/Stefan-Radu/bachelor-thesis/releases/tag/yey)
