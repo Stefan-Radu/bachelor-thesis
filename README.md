@@ -24,11 +24,11 @@ read the whole address space of another process.
 
 ### Source code
 
-[attacker](./spectre/cross_process_final/attack.c)
+[attacker](./spectre/cross_process_final/attack.c)  
 [victim](./spectre/cross_process_final/victim.c)
 
 ### Presentation
 
-[slides](./prezentare/Stefan_Radu - Atacuri Speculative.pdf)
+[slides]("./prezentare/Stefan_Radu - Atacuri Speculative.pdf")
 
 ### Final Document
