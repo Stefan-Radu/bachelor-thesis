@@ -35,7 +35,7 @@ read the whole address space of another process.
 
 Checkout the actual paper [here](https://github.com/Stefan-Radu/bachelor-thesis/releases/tag/yey)
 
-### Demo
+### Video Demo
 
 <a href="https://youtu.be/vVRwDLMsL_Y" target="_blank">
   <img src="https://img.youtube.com/vi/vVRwDLMsL_Y/0.jpg" alt="custom spectre attack - demo">
