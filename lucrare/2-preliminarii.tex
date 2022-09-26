@@ -62,7 +62,7 @@ schimbare bruscă în starea procesorului. Exemple de excepții la nivel de
 aplicație ar fi: cereri de alocare a memoriei pe heap, cereri de input/output,
 încercări de împărțire la $0$, încercări de accesare a memoriei în afara
 limitelor impuse de memoria virtuală dedicată procesului, etc. Excepțiile se
-împart în mai multe categorii: \emph{interrupts}, \emph{traps}, emph{faults},
+împart în mai multe categorii: \emph{interrupts}, \emph{traps}, \emph{faults},
 \emph{aborts}. Categoria care va fi adusă în discuție în prezenta lucrare este
 cea de-a treia, \emph{faults}. Defectele (\emph{faults}), sunt erori (posibil
 recuperabile de către sistemul de operare) cauzate de o aplicație (eg.
@@ -94,7 +94,7 @@ mapată prin intermediul tabelelor de traducere a paginilor (\emph{translation
 table}), către corespondentul fizic. În procesor există un registru dedicat pentru 
 reținerea tabelului de traducere utilizat la un moment dat și care se schimbă la 
 fiecare schimbare de context. În consecință, ficare proces își poate accesa doar 
-zona să virtuala de memorie. \\
+zona sa virtuală de memorie. \\
 
 Tabelele de traducere mai au și rolul de a asigura separarea între zona de
 memorie dedicată utilizatorului și zona de memorie dedicată kernel-ului în
@@ -157,7 +157,7 @@ cauza declanșării unei excepții în urma accesării unei zone de memorie inte
 de exemplu). Aceste tipuri de instrucțiuni numite \emph{Instrucțiuni
 Tranzitorii} stau la baza atacului \emph{Meltdown} \cite{meltdown2018}.
 
-\subsection{Execuție Speculativă \& Prezicerea ramurilor de execuție}
+\subsection{Execuție Speculativă și Prezicerea ramurilor de execuție}
 \label{sec:branch_prediction}
 
 Execuția Speculativă presupune executarea codului în avans \emph{out-of-order}
@@ -178,14 +178,14 @@ obținute speculativ sunt fie păstrate (caz în care se căștiga timp de rular
 prețios) fie respinse, caz în care se revine la o stare anterioară.
 \cite{spectre2019}. \\
 
-Branch predictor-ul are în general o acuratețe foarte ridicata, chiar de peste
+Branch predictor-ul are în general o acuratețe foarte ridicată, chiar de peste
 $95\%$ \cite{what_is_speculative_execution}, așadar executând speculativ s-au
 obținut îmbunătățiri considerabile de performanță. Cu toate acestea, în
 cazurile în care ramura de execuție nu este prezisă corect, se vor executa
 instrucțiuni care nu ar fi avut loc în cadrul execuției secvențiale,
 \emph{în-order execution}. Bineînțeles, aceste instrucțiuni vor fi
 \emph{rolled-back}, iar rezultatul final va fi cel așteptat, dar la nivel
-micro-arhitectural se pot observa și măsură niște efecte secundare neprevăzute
+micro-arhitectural se pot observa și măsura niște efecte secundare neprevăzute
 ale acestor instrucțiuni executate \emph{out-of-order}. Analizarea cu grijă a
 acestor efecte secundare stă la baza atacurilor de tip \emph{Spectre}
 \cite{spectre2019}.
@@ -222,7 +222,7 @@ conform figurii \ref{fig:cache_hit}.
 Timpul de accesare al valorii corespunzătoare variabilei \texttt{value} poate
 fi calculat utilizând instrucțiunea \texttt{\_\_rdtscp} specifică procesoarelor
 Intel. Aceasta permite citirea \emph{time-stamp counter-ului} din procesor
-\cite{rdtscp}. Prin doua măsurători ce încadrează dereferentierea pointer-ului
+\cite{rdtscp}. Prin doua măsurători ce încadrează dereferențierea pointer-ului
 către \texttt{value}, putem măsură numărul de ciclii de procesor necesari
 operației. Repetând experimentul de $10000$ de ori și calculând media
 timpului de acces pentru fiecare caz, se obțin următoarele rezultate:
@@ -255,12 +255,12 @@ procese a unor pagini comune cu drepturi exclusive de citire
 (\emph{read-only}). \emph{FLUSH and RELOAD} este una dintre tehnicile
 documentate de atac asupra memoriei cache. Scenariul descris în lucrarea de
 cercetare în care a fost introdus atacul este acela al unei victime și al unui
-spion care împart o zonă partajata de memorie. Spionul se folosește de
+spion care împart o zonă partajată de memorie. Spionul se folosește de
 instrucțiunea \texttt{clflush} care invalidează liniile aferente unei zone de
 memorie din toată ierarhia cache-ului din procesor \cite{clflush}, iar apoi
-așteaptă o perioada scurta de timp. În final verifică daca la accesarea zonei
+așteaptă o perioadă scurta de timp. În final verifică dacă la accesarea zonei
 respective obține un \emph{cache hit} sau un \emph{cache miss}, astfel aflând
-daca victima a accesat sau nu în fereastra respectivă de timp, zona de memorie
+dacă victima a accesat sau nu în fereastra respectivă de timp, zona de memorie
 urmărită. Repetând experimentul, s-au putut extrage informații suficiente
 pentru realizarea unor atacuri de succes asupra implementării de la vremea
 respectiva a unor algoritmi criptografici (\emph{OpenSSL}, \emph{AES}),
@@ -270,27 +270,27 @@ monitorizarea activității unui utilizator, etc. \cite{flush_reload}.
 
 \emph{FLUSH and FLUSH} se aseamănă cu \emph{FLUSH and RELOAD}, diferența 
 constând în faptul că spionul în loc de a măsură timpul de acces a zonei
-tintă, vă apela iarăși \texttt{clflush}. Execuția mai rapida vă corespunde
-unui \emph{cache miss}, iar cea mai rapida unui \emph{cache hit} \cite{cache_attacks}.
+tintă, vă apela iarăși \texttt{clflush}. Execuția mai rapidă va corespunde
+unui \emph{cache miss}, iar cea mai rapidă unui \emph{cache hit} \cite{cache_attacks}.
 
 \emph{EVICT and RELOAD} folosește un \emph{eviction set} pentru a elimina din
 cache zona de memorie tintă. Apoi, pentru măsurarea timpului se procedează 
-identic ca la \emph{FLUSH and RELOAD}. Tehnica se aseamănă în eficienta cu 
+identic ca la \emph{FLUSH and RELOAD}. Tehnica se aseamănă în eficiență cu 
 cele menționate anterior \cite{cache_attacks}.
 
 \emph{PRIME + PROBE} constă într-o abordare diferita. Atacatorul umple toată
-zona partajata din cache (\emph{PRIME}). Victima vă elimina valori încărcate
+zona partajata din cache (\emph{PRIME}). Victima va elimina valori încărcate
 de atacator în cache în timp ce rulează (\emph{evict}). Atacatorul va măsura 
 apoi timpul de acces pentru toată zona de cache (\emph{probe}). În cazul în care observă
 un \emph{cache hit}, constată că victima a accesat zona respectivă \cite{cache_attacks}.
 
 \subsection{Covert-channel}
 
-Un \emph{cover channel} reprezintă un mod, sau protocol de comunicare ascuns.
+Un \emph{covert channel} reprezintă un mod, sau protocol de comunicare ascuns.
 Prin ascuns înțelegem că este foarte greu, sau chiar imposibil de detectat de
 către un administrator, sau alți utilizatori de pe sistem, întrucât nu
 presupune transmiterea de date într-un mod uzual. Utilizarea tehnicilor
-descrise anterior pentru extragerea diverselor informații, fac ca memoria cache
+descrise anterior pentru extragerea diverselor informații face ca memoria cache
 să devină un astfel de canal de comunicare ascuns. Un astfel de mod de comunicare
 poate fi utlizat pentru transmiterea de informații între procese care în mod normal
 nu ar fi avut dreptul să comunice, conform politicilor de securitate prezente pe 
@@ -299,30 +299,30 @@ sistem \cite{covert_channel}.
 \subsection{Atacuri Speculative}
 
 Atacurile Speculative se bazează pe exploatarea tehnicii de optimizare numită
-\emph{Execuție Speculativă} care, datorită avantajelor aduse în performata,
+\emph{Execuție Speculativă} care, datorită avantajelor aduse în performață,
 este utilizată în prezent de majoritatea procesoarelor folosite în prezent.
 Atacurite se folosesc de această optimizare pentru a produce intenționat efecte
 secundare măsurabile, cu scopul de a accesa date în mod neautoriazat, prin
-intermediul unor canale secundare (\emph{side channeles}) sau ascunse
+intermediul unor canale secundare (\emph{side channels}) sau ascunse
 (\emph{covert channels}). În continuarea acestei lucrări voi discuta
 particularitățile și implicațiile câtorva atacuri din această clasă care au
 avut un impact semnificativ asupra industriei în ultimii ani.
 
 \subsection{ROP}\label{sec:rop}
 
-\emph{ROP} \cite{shacham2007geometry} este o tehnica prin care un atacator care
-reuseste sa deturneze fluxul normal de instructiuni, poate sa manipuleze
-victima in realizarea unor actiuni complexe. In acest scop, atacatorul executa
-in lant sevente reduse ca dimensiune de instructiuni masina numite
-\emph{gadget-uri}. Gaget-urile sunt prezente si identificate de atacator in
-codul sursa al victimei si se aseamana prin faptul ca realizeaza operatii
-oarecare inaintea executarii unei instrutiuni (sau set de instructiuni) de tip
-\emph{return}. Daca un atacator poate prelua controlul
-\emph{stack-pointer-ului}, atunci poate redirectiona foluxul de instructiunui
-catre un gadget special ales, care la randul lui va ridirectiona fluxul catre
-alt gadget. S-a demonstrat ca un set restrans de gadget-uri poate fi echivalent
+\emph{ROP} \cite{shacham2007geometry} este o tehnică prin care un atacator care
+reușește să deturneze fluxul normal de instrucțiuni, poate să manipuleze
+victima în realizarea unor acțiuni complexe. În acest scop, atacatorul execută
+în lanț secvențe reduse ca dimensiune de instrucțiuni mașină numite
+\emph{gadget-uri}. Gaget-urile sunt prezente și identificate de atacator în
+codul sursă al victimei și se aseamană prin faptul că realizează operații
+oarecare înaintea executării unei instruțiuni (sau set de instrucțiuni) de tip
+\emph{return}. Dacă un atacator poate prelua controlul
+\emph{stack-pointer-ului}, atunci poate redirecționa fuluxul de instrucțiunui
+către un gadget special ales, care la rândul lui va ridirecționa fluxul către
+alt gadget. S-a demonstrat că un set restrâns de gadget-uri poate fi echivalent
 cu un limbaj Turing-Complete \cite{homescu2012microgadgets}. Pe idei preluate
-din \emph{ROP} se bazeaza variante ale clasei de atacuri \emph{Spectre}, care
+din \emph{ROP} se bazează variante ale clasei de atacuri \emph{Spectre}, care
 apeleaza in mod speculativ \emph{gadget-uri} din spatiul de meomorie al
 victimei.
 

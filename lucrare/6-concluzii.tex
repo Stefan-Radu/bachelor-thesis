@@ -1,0 +1,27 @@
+\chapter{Concluzii și Direcții Viitoare}
+
+În această lucrare am abordat subiectul \emph{Atacurilor Speculative}. Am
+prezentat detalile atacului \emph{Meltdown} care permitea unui utilizator
+neprivilegiat citirea oricărei zone din memoria fizică prin intermediul
+Kernelului, soluția care a dus la mitigarea acestuia (\emph{KAISER}), cât
+și observații personale legate de reproducere. Ulterior am prezentat clasa
+de atacuri \emph{Spectre} care permite citirea zonelor de memorie 
+accesibile unui proces victimă cu care un proces atacator are în comun
+o zonă limitată de memorie. Prezint de asemenea și soluții care au încercat
+să mitigheze cu grade variate de succes aceste vulnerabilități. În final,
+prezint o implementare inter-proces, cu scop didactic a \emph{Spectre v1}.
+
+Noua variantă a \emph{Spectre} (\emph{BHI}) publicată la începutul anului 2022
+demonstrează ineficiența solutilor implementate până în prezent importriva
+\emph{Spectre V2}. Astfel, \emph{Spectre} rămâne un subiect deschis de
+cercetare. Se pot dezvolta în continuare noi variante ale atacului care pot fi
+eficiente chiar și împotriva mitigarilor ce vor apărea în viitorul apropiat. Se
+pot dezvolta noi mitigari care să afecteze performanța programelor într-un mod
+minimal, mai puțin decât cele deja existente care reduc performanța
+considerabil. Se pot evalua implicările atacului pe platforme mai puțin
+documentate.
+
+În viitor, îmi doresc să studiez mai în detaliu \emph{Spectre V2} și ulterior,
+noua variantă \emph{Spectre BHI} apărută recent, pentru a înțelege mai bine
+mecanismele din spate care fac posibile rezultatele obținute. Noile cunoștinte
+dobândite, m-ar ajuta în contiuarea cercetării atacurilor speculative.

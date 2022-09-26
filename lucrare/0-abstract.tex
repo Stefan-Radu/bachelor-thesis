@@ -14,27 +14,33 @@
   jumătatea anului 2022, \emph{Spectre} afectează în continure majoritatea
   computerelor din lumea întreagă și rămâne un pericol pentru utilizatori și un
   subiect de mare interes pentru cercetători. În această lucrare vor fi
-  prezentate particularitățile celor două atacuri, și o implementare
-  demonstrativă a unui atac de tip \emph{Spectre}.
+  prezentate particularitățile celor două atacuri. În final voi ilustra și
+  rezultatele experimentelor personale sub forma unei implementari
+  demonstrative, diferită de cea descrisă în materialul sursă
+  \cite{spectre2019}, a unui atac de tip \emph{Spectre}, prin care un atacator
+  poate citi întreg spatiul de memorie al unui alt proces.
 
 \end{abstract}
 
 \begin{abstract}{english}
   
   Modern computers are equiped with features such as \emph{out-of-order
-  execution} and \emph{branch prediction}, which are used to reduce CPU idel
-  time and improve performance. \emph{Meltdown} and \emph{Spectre} are to cyber
-  attacks that exploit microarhitectural side-effects which apper as a result
-  of such optimization techiniques being used. An attacker can read private
+  execution} and \emph{branch prediction}, which are used to reduce CPU idle
+  time and improve performance. \emph{Meltdown} and \emph{Spectre} are two cyber
+  attacks that exploit microarchitectural side-effects which appear as a result
+  of such optimization techniques being used. An attacker can read private
   data of the vicim at arbitrary locations in memory, without exploiting any
   software bug. \emph{Intel}, \emph{AMD} and \emph{ARM} were forced to redesign
-  their CPUs in order to migiate the risks posed by \emph{Meltdown} and
+  their CPUs in order to mitigate the risks posed by \emph{Meltdown} and
   \emph{Spectre}. Despite deployed mitigations, in the second half of 2022,
   most computers in the world are vulnerable to variations of \emph{Spectre}
-  attacks, billions of users begin at risk. This class of attacks remains a
+  attacks, billions of users being at risk. This class of attacks remains a
   subject of great interest for researchers in the field of security. In this
-  work, the technicalities and implications of both attacks will be covered.
-  Moreover, a proof of concept for a \emph{Spectre} attack will be presented.
+  work, the technicalities and implications of both attacks will be covered. In
+  the end, the results of my own experiements will be presented, as a proof of
+  concept for a \emph{Spectre} attack. This implementation is different from
+  the one in the research paper \cite{spectre2019} and allows an attacker to
+  read the whole address space of another process.
 
 \end{abstract}
 

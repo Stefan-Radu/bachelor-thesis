@@ -1,5 +1,10 @@
-SEEDUbuntu-16.04-32bit 
-SpectrePoC
-spectre-meltdown-checker
-papers
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
 .git
